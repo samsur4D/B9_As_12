@@ -1,0 +1,93 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.final-hw{
+  background-image: url('https://i.ibb.co/BsBdfDL/james-lacy-5w3o-IN-0-Lzs-unsplash.jpg');
+  height: 2000px;
+  
+} 
+.finaly-hw{
+  background-image: url('https://i.ibb.co/YRyzJDn/IMG-20231205-185243-665.jpg');
+  height: 3000px;
+  
+} 
+.finaly1-hw{
+  background-image: url('https://i.ibb.co/7C6m86B/yan-laurichesse-3q-Zn-N-M45-Ds-unsplash.jpg');
+  height: 30000px;
+  
+} 
+.finaly2-hw{
+  background-image: url('https://i.ibb.co/k0mLSB8/bruno-cervera-azsk-6-IMT3-I-unsplash.jpg');
+  height:3000px;
+  
+} 
+.finaly3-hw{
+  background-image: url('https://i.ibb.co/sm63Wz7/ragi.webp');
+  height: 30000px;
+  
+} 
+
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+
+.video-container .content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.extra-section{
+  background-image: url('https://i.ibb.co/k2JbWXZ/black1.jpg');
+  background-position: center;
+  height: 5000px;
+  margin-bottom: 100px;
+  background-size: cover;
+  border-radius: 30px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  object-fit: cover;
+}

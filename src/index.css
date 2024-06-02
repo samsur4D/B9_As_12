@@ -1,0 +1,63 @@
+/* lato font */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Seymour+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.card-body{
+    visibility: hidden;
+   
+}
+
+.cardi:hover .card-body{
+    visibility: visible;
+   
+}
+.div1{
+    background-image: url(https://i.ibb.co/yFC3Z94/WERUVA-WEBSITE-CORE-VALUES-V1-R2-1.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+
+.div1inner{
+    visibility: hidden;
+}
+.div1:hover .div1inner {
+    visibility: visible;
+}
+
+
+
+.div2{
+    background-image: url(https://i.ibb.co/N7WkLRr/WERUVA-WEBSITE-CORE-VALUES-V1-R1-1.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+
+.div2inner{
+    visibility: hidden;
+}
+.div2:hover .div2inner {
+    visibility: visible;
+}
+
+
+
+
+.div3{
+    background-image: url(https://i.ibb.co/v1bPp1t/WERUVA-WEBSITE-CORE-VALUES-WE-LUV-YA-V1-R2.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+
+.div3inner{
+    visibility: hidden;
+}
+.div3:hover .div3inner {
+    visibility: visible;
+}

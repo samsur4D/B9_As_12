@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="33px" height="14px" viewBox="0 0 33 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs></defs>
+  <g id="homepage-H0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="PSCI-d.ui-homepage-v006" transform="translate(-255.000000, -512.000000)">
+      <g id="Group-56" transform="translate(68.000000, 302.000000)">
+        <g id="Group-6">
+          <g id="button-/-primary-/-blue-/-large-copy" transform="translate(0.000000, 185.000000)">
+            <g id="Group" transform="translate(49.000000, 19.000000)">
+              <g id="icon-/-push" transform="translate(138.000000, 7.000000)">
+                <g id="Group-9-Copy-2" transform="translate(16.000000, 6.000000) rotate(-90.000000) translate(-16.000000, -6.000000) translate(10.000000, -10.000000)">
+                  <rect id="Rectangle-2" fill="#00A2C7" fill-rule="nonzero" x="5" y="0" width="2" height="32" rx="1"></rect>
+                  <polyline id="Path-3" stroke="#00A2C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill-rule="nonzero" points="12 26 6.09669076 32 -1.2246468e-16 26"></polyline>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
