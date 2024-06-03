@@ -43,7 +43,22 @@
 } 
 .finaly3-hw{
   background-image: url('https://i.ibb.co/sm63Wz7/ragi.webp');
-  height: 30000px;
+  height: 3000px;
+  
+} 
+.petlistbanner{
+  background-image: url('https://i.ibb.co/gwSVsCy/i-Stock-1186973591-1-1800x777.jpg');
+  height: 3000px;
+  
+} 
+.catsbanner{
+  background-image: url('https://i.ibb.co/tsYKQXV/raychan-Kbi-V1er60-Wk-unsplash.jpg');
+  height: 3000px;
+  
+} 
+.dogsbanner{
+  background-image: url('https://i.ibb.co/Vt1SKC1/sam-mcnamara-l-Bd-Vj-Qcf-SRQ-unsplash.jpg');
+  height: 3000px;
   
 } 
 
@@ -80,7 +95,7 @@
 .extra-section{
   background-image: url('https://i.ibb.co/k2JbWXZ/black1.jpg');
   background-position: center;
-  height: 5000px;
+  height: 6100px;
   margin-bottom: 100px;
   background-size: cover;
   border-radius: 30px;

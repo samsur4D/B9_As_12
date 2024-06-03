@@ -1,20 +1,100 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Marquee from "react-fast-marquee";
+import { IoLogoOctocat } from "react-icons/io";
+import { PiDogBold } from "react-icons/pi";
 
 const PetListing = () => {
+  const [pets, setPets] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [category, setCategory] = useState("");
+
+  useEffect(() => {
+    fetch("pet.json")
+      .then((res) => res.json())
+      .then((data) => setPets(data));
+  }, []);
+
+  const filteredPets = pets.filter((pet) => {
+    return (
+      pet.breed.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      (category === "" || pet.status.toLowerCase() === category.toLowerCase())
+    );
+  });
+
   return (
-    <div>
-      <div className="final-hw hero bg-fixed  h-[550px] mt-20 mb-24">
-        <div className="hero-overlay bg-black  bg-opacity-30"></div>
+    <div className="min-h-screen">
+      <div className="petlistbanner hero bg-fixed h-[650px] ">
+        <div className="hero-overlay bg-black bg-opacity-30"></div>
         <div className="hero-content text-center bg-black opacity-60 px-10 py-10 rounded-2xl text-neutral-content">
-          <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-samu font-bold">Paw Pixie</h1>
-            <p className="mb-5">
-              Efficiently empower sticky outsourcing and integrated resources.
-              Competently fashion resource sucking total linkage via fully
-              tested quality.
+          <div className="max-w-3xl">
+            <h1 className="mb-5 text-5xl w-full font-samu font-bold">
+              Pet Category
+            </h1>
+            <div className="flex justify-center space-x-4">
+              <input
+                type="search"
+                placeholder="Search by dog ​​and cat breed names"
+                className="input input-bordered input-info bg-black w-full max-w-3xl mt-5 mb-5"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+              <select
+                className="select select-bordered select-info bg-black w-full max-w-xs mt-5 mb-5"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+              >
+                <option value="">All</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+              </select>
+            </div>
+            <p className="mb-5 text-2xl font-bold">
+              Search by dog ​​and cat{" "}
+              <span className="text-orange-500 text-5xl">Breed names</span>
+              <p className="text-xl mt-3">If you want, you can see the names of dog and cat breeds from below</p>
             </p>
           </div>
         </div>
+      </div>
+      <Marquee speed={150} className="mb-24">
+        <p className="font-bold flex font-samu bg-[#fab1a0] py-5 text-4xl">
+          <PiDogBold className="text-7xl" />Dogs Breed: Golden Retriever, German Shepherd Mix, Labrador Retriever,
+          Australian Shepherd Mix, Beagle, Cocker Spaniel, Border Collie, Shih
+          Tzu, Boxer, Rottweiler, Australian Shepherd ____<IoLogoOctocat className="text-7xl" /> Cats Breed: Domestic
+          Shorthair, Siamese, Maine Coon, Persian, Ragdoll, Siberian, Bengal,
+          Tabby__
+        </p>
+      </Marquee>
+
+      <div className="grid gap-5 px-4 mb-20 h-full grid-cols-1 lg:grid-cols-3">
+        {filteredPets.map((pet) => (
+          <div
+            key={pet._id}
+            className="card lg:card-side bg-base-100 shadow-xl"
+          >
+            <figure>
+              <img
+                className="w-[650px] h-[420px]"
+                src={pet.image}
+                alt="Album"
+              />
+            </figure>
+            <div className="w-[550px] h-[420px] px-3 bg-[#dfe6e9] py-16">
+              <h2 className="card-title mb-1 text-sm font-bold font-samu">
+                Name: {pet.name}
+              </h2>
+              <h2 className="text-sm font-bold mb-3 font-samu">Age: {pet.age}</h2>
+              <h2 className="text-sm font-bold mb-3 font-samu">Breed: {pet.breed}</h2>
+              <h2 className="text-sm font-bold mb-3 font-samu">Location: {pet.location}</h2>
+              <h2 className="text-sm font-bold mb-3 font-samu">Vaccine: {pet.vaccine}Vaccinated</h2>
+              <h2 className="text-sm font-bold mb-3 font-samu">Date: {pet.date}</h2>
+             
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Listen</button>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

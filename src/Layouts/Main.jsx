@@ -14,12 +14,14 @@ const Main = () => {
         <div className='min-h-screen flex flex-col'>
             <Headroom> 
                  {noHeaderFooter || <Nav></Nav>}
+                 {/* <Nav></Nav> */}
             </Headroom>
             <div className='flex-1'>
             <Outlet></Outlet>
             </div>
              
             {noHeaderFooter || <Footer></Footer>}
+            {/* <Footer></Footer> */}
 
             
         </div>

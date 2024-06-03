@@ -7,7 +7,7 @@ const Nav = () => {
   const { user, logOut } = useContext(AuthContext);
 
   return (
-    <div className="navbar fixed z-10 shadow-sm  bg-gray-500 bg-opacity-30 px-4 mx-auto">
+    <div className="navbar  shadow-sm  bg-transparent   bg-opacity-30 px-4 mx-auto">
       <div className="flex-1 ">
         <Link to="/" className="flex gap-2 items-center">
           <img className="w-24 h-16" src={logo} alt="" />
@@ -16,32 +16,48 @@ const Nav = () => {
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
           <li className="hidden lg:block">
-            <Link to="/" className="text-lg font-samu text-white">Home</Link>
+            <Link to="/" className="text-lg ml-5 bg-gray-600 font-samu text-white">
+              Home
+            </Link>
           </li>
           <li className="hidden lg:block">
-            <Link to="/petlisting" className="text-lg font-samu text-white">Pet Listing</Link>
+            <Link to="/petlisting" className="text-lg ml-5 bg-gray-600 font-samu text-white">
+              Pet Listing
+            </Link>
           </li>
           <li className="hidden lg:block">
-            <Link to="/" className="text-lg font-samu text-white">Donation</Link>
+            <Link to="/" className="text-lg ml-5 font-samu bg-gray-600 text-white">
+              Donation
+            </Link>
           </li>
           <li className="hidden lg:block">
-            <Link to="/" className="text-lg font-samu text-white">Campaigns</Link>
+            <Link to="/" className="text-lg ml-5 font-samu bg-gray-600 text-white">
+              Campaigns
+            </Link>
+          </li>
+          <li className="hidden lg:block">
+            <Link to="/" className="text-lg ml-5 font-samu bg-gray-600 text-white">
+             My Campaigns
+            </Link>
           </li>
           {user ? (
             ""
           ) : (
             <li className="">
-              <Link className="text-lg font-samu" to="/login">Login</Link>
+              <Link className="text-lg font-samu" to="/login">
+                Login
+              </Link>
             </li>
           )}
           {user ? (
             ""
           ) : (
             <li className=" ">
-            <Link className="text-lg font-samu" to="/register">Sign Up</Link>
-          </li>
+              <Link className="text-lg font-samu" to="/register">
+                Sign Up
+              </Link>
+            </li>
           )}
-        
 
           {!user && (
             <li className="hidden">
@@ -57,7 +73,7 @@ const Nav = () => {
               role="button"
               className="btn btn-ghost btn-circle avatar"
             >
-              <div title={user?.displayName} className="w-12  rounded-full">
+              <div title={user?.displayName} className="w-20  rounded-full">
                 <img
                   referrerPolicy="no-referrer"
                   alt="User Profile Photo"
@@ -67,24 +83,27 @@ const Nav = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1000] relative p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1000] relative p-2 shadow bg-base-100 rounded-box w-80"
             >
-              <li>
+              <li className="block lg:hidden">
                 <Link to="/">Home</Link>
               </li>
-              <li className="">
+              <li className="block lg:hidden">
                 <Link to="/">Pet Listing</Link>
               </li>
-              <li className="">
+              <li className="block lg:hidden">
                 <Link to="/">Donation</Link>
               </li>
-              <li className="">
+              <li className="block lg:hidden">
                 <Link to="/">Campaigns</Link>
               </li>
-              <li className="mt-2">
+              <li className="font-samu block text-center">
+                <Link to="/">Dashboard</Link>
+              </li>
+              <li className="mt-2 ">
                 <button
                   onClick={logOut}
-                  className="bg-gray-200 block text-center"
+                  className="bg-gray-200 font-samu block text-center"
                 >
                   Logout
                 </button>

@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import Action from "../HomeComoponents/Action";
 import Cute from "../HomeComoponents/Cute";
 import donate from "../assets/donateeee.png";
+import PetCategoryHome from "../HomeComoponents/PetCategoryHome";
 
 const Home = () => {
   return (
@@ -32,7 +33,11 @@ const Home = () => {
       </Link>
 
       <Cute></Cute>
-
+      <div>
+        <h1 className="font-samu font-bold text-5xl text-center">Pet Category Section</h1>
+        <p className="font-samu font-semibold text-gray-500 mt-5 text-xl text-center">Explore our furry of the companions in the pet category! From playful dogs to curious cats, our selection <br /> features the most adorable companions. Please note, at the moment, we exclusively offer <p data-aos="flip-up" className="mb-2"><span className="text-6xl text-orange-600">cats</span > and <span className="text-6xl text-[#009688]"> dogs</span></p> for adoption. Find your new best friend today!"</p>
+      </div>
+      <PetCategoryHome></PetCategoryHome>
       <Action></Action>
       {/* <AllDOg></AllDOg> */}
       <Three></Three>
@@ -43,16 +48,16 @@ const Home = () => {
       <Eight></Eight>
       <div className="flex-col  items-center mt-24">
         <div data-aos="fade-right" className="flex-col container mx-auto">
-          <h1 className="text-9xl font-bold lg:ml-96 font-samu text-gray-400">
+          <h1 className="text-6xl lg:text-9xl font-bold lg:ml-96 font-samu text-gray-400">
             Save
           </h1>
-          <h1 className="text-9xl font-bold lg:ml-96 font-samu text-gray-400">
+          <h1 className="text-6xl lg:text-9xl font-bold lg:ml-96 font-samu text-gray-400">
             Them All
           </h1>
         </div>
         <div data-aos="fade-left">
           <img className="w-[1500px] rounded-full mr-24" src={AllDOg} alt="" />
-          <p className="text-4xl font-bold ml-16 font-samu text-gray-500 container mx-auto">
+          <p className="text-sm lg:text-4xl font-bold ml-5 lg:ml-16 font-samu text-gray-500 container mx-auto">
             {" "}
             "Dogs are not our whole life, but they make <br /> our lives whole."
             – Roger Caras{" "}

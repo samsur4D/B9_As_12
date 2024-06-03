@@ -1,5 +1,6 @@
 import React from 'react';
 import vdo from '../assets/mixkit-sleepy-kitten-watching-a-toy-behind-the-camera-45406-hd-ready.mp4'
+import vdo2 from '../assets/31936-360.mp4'
 import { Link } from 'react-router-dom';
 import dualdog from '../assets/dualdog.jpg'
 
@@ -9,6 +10,7 @@ const Viedo1 = () => {
               <div className="video-container">
         <video autoPlay loop muted>
           <source src={vdo} type="video/mp4" />
+          {/* <source src={vdo2} type="video/mp4" /> */}
           Your browser does not support the video tag.
         </video>
         <div className="content  py-10 px-10  ">

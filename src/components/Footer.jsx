@@ -10,7 +10,7 @@ import donate from "../assets/donateeee.png";
 
 const Footer = () => {
   return (
-    <footer className="py-6 relative dark:bg-gray-100 dark:text-gray-900">
+    <footer className="relative  dark:text-gray-900">
       <div className="absolute inset-0 z-0">
         <video
           className="w-full h-full object-cover"
@@ -21,7 +21,7 @@ const Footer = () => {
         ></video>
       </div>
 
-      <div className="container relative bg-black bg-opacity-50  py-32 px-6 mx-auto space-y-6 divide-y dark:divide-gray-600 md:space-y-12 divide-opacity-50">
+      <div className="w-full relative bg-black bg-opacity-50  h-full py-32 px-6 mx-auto space-y-6 divide-y  md:space-y-12 divide-opacity-50">
         <div className="grid lg:grid-cols-12">
           <div className="pb-6 col-span-full md:pb-0 md:col-span-6">
             <a

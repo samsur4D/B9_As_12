@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import Login from "../pages/Authentication/Login";
 import Register from "../pages/Authentication/Register";
 import PetListing from "../pages/PetListing";
+import Dogs from "../pages/Dogs";
+import Cats from "../pages/Cats";
 
   const router = createBrowserRouter([
     {
@@ -17,6 +19,14 @@ import PetListing from "../pages/PetListing";
         {
           path: '/petlisting',
           element: <PetListing></PetListing>
+        },
+        {
+          path: '/cats',
+          element: <Cats></Cats>
+        },
+        {
+          path: '/dogs',
+          element: <Dogs></Dogs>
         },
         {
             path: '/login',

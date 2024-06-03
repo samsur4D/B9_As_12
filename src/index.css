@@ -45,7 +45,7 @@
     visibility: visible;
 }
 
-
+/* ------------------------------------------------------------ */
 
 
 .div3{
@@ -55,9 +55,43 @@
    
 }
 
+
+
 .div3inner{
     visibility: hidden;
 }
 .div3:hover .div3inner {
+    visibility: visible;
+}
+
+
+/* ------------------------------------------------------------ */
+.petcat{
+    background-image: url(https://i.ibb.co/dK38y8p/jack-dong-y-Joz-LVBx-NA0-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+
+.petcatinner{
+    visibility: hidden;
+}
+.petcat:hover .petcatinner {
+    visibility: visible;
+}
+
+
+/* ------------------------------------------------------------ */
+.petdog{
+    background-image: url(https://i.ibb.co/qxRzwVN/karsten-winegeart-BJaq-Pa-H6-AGQ-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+
+.petdoginner{
+    visibility: hidden;
+}
+.petdog:hover .petdoginner {
     visibility: visible;
 }

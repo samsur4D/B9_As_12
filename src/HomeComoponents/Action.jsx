@@ -13,10 +13,10 @@ import dhar1 from "../assets/Rectangle_373__1_.webp";
 import dhar2 from "../assets/Rectangle_373__2_.webp";
 import dhar3 from "../assets/adopt-card-3.webp";
 import { Link } from "react-router-dom";
-import arow from '../assets/arrow.svg'
+import arow from "../assets/arrow.svg";
 import { TbArrowBigRightLines } from "react-icons/tb";
-import { motion } from 'framer-motion'
-import { fadeIn } from '../HomeComoponents/variants'
+import { motion } from "framer-motion";
+import { fadeIn } from "../HomeComoponents/variants";
 
 const Action = () => {
   return (
@@ -24,6 +24,7 @@ const Action = () => {
       <div className="flex flex-col justify-between gap-72 px-5 py-56">
         {/* -------------------------------- */}
         <div data-aos="fade-right" className="">
+         
           <h1 className="text-xl  lg:text-6xl text-gray-400 font-bold font-samu">
             Keeping and regularly playing with pets can significantly improve
             various aspects of health.
@@ -34,18 +35,30 @@ const Action = () => {
         </div>
         {/* ------------------------------- */}
         <div className="grid grid-cols-1 items-center justify-center gap-10 px-16 lg:grid-cols-2  mr-10">
-          <img className="lg:w-[1200px]" src={fresh} alt="" />
+          <img className="w-[1200px] lg:w-[1200px]" src={fresh} alt="" />
           <div>
-            <h1 data-aos="fade-left" className="text-gray-400 text-3xl lg:text-5xl mt-12 font-samu">
+            <h1
+              data-aos="fade-left"
+              className="text-gray-400 text-3xl lg:text-5xl lg:mt-12 font-samu"
+            >
               1.Reduced Stress and Anxiety
             </h1>
-            <h1 data-aos="fade-left" className="text-gray-400 text-3xl lg:text-5xl mt-12 font-samu">
+            <h1
+              data-aos="fade-left"
+              className="text-gray-400 text-3xl lg:text-5xl mt-12 font-samu"
+            >
               2.Improved Mood
             </h1>
-            <h1 data-aos="fade-left" className="text-gray-400 text-3xl lg:text-5xl mt-12 font-samu">
+            <h1
+              data-aos="fade-left"
+              className="text-gray-400 text-3xl lg:text-5xl mt-12 font-samu"
+            >
               3.Increased Physical Activity
             </h1>
-            <h1 data-aos="fade-left" className="text-gray-400 text-3xl lg:text-5xl mt-12 font-samu">
+            <h1
+              data-aos="fade-left"
+              className="text-gray-400 text-3xl lg:text-5xl mt-12 font-samu"
+            >
               4.Lower Blood Pressure
             </h1>
           </div>
@@ -53,16 +66,28 @@ const Action = () => {
         {/* ------------------------------- */}
         <div className="grid grid-cols-1  items-center justify-center gap-10 px-16 lg:grid-cols-2  mr-10">
           <div>
-            <h1 data-aos="fade-right" className="text-gray-400 text-3xl lg:text-5xl mt-12 font-samu">
+            <h1
+              data-aos="fade-right"
+              className="text-gray-400 text-3xl lg:text-5xl mt-12 font-samu"
+            >
               5.Boosted Immune System
             </h1>
-            <h1 data-aos="fade-right" className="text-gray-400 text-3xl lg:text-5xl mt-12 font-samu">
+            <h1
+              data-aos="fade-right"
+              className="text-gray-400 text-3xl lg:text-5xl mt-12 font-samu"
+            >
               6.Improved Mental Health
             </h1>
-            <h1 data-aos="fade-right" className="text-gray-400 text-3xl lg:text-5xl mt-12 font-samu">
+            <h1
+              data-aos="fade-right"
+              className="text-gray-400 text-3xl lg:text-5xl mt-12 font-samu"
+            >
               7.Increased Sense of Purpose
             </h1>
-            <h1 data-aos="fade-right" className="text-gray-400 text-3xl lg:text-5xl mt-12 font-samu">
+            <h1
+              data-aos="fade-right"
+              className="text-gray-400 text-3xl lg:text-5xl mt-12 font-samu"
+            >
               8.Enhanced Social Interaction
             </h1>
           </div>
@@ -70,13 +95,12 @@ const Action = () => {
         </div>
         {/* ------------------------------- */}
         <motion.div
-           
-           variants={fadeIn("up" , 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{once:false , amount:0.7}}
-         
-        className="grid grid-cols-1 flex gap-5 px-12 lg:grid-cols-3">
+          variants={fadeIn("up", 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+          className="grid grid-cols-1 flex gap-5 px-12 lg:grid-cols-3"
+        >
           <div className="max-w-lg gap-5 rounded-md shadow-md ">
             <img
               src={dhar1}
@@ -159,7 +183,10 @@ const Action = () => {
           </div>
         </motion.div>
         {/* ---------------------------- */}
-        <div data-aos="zoom-out" className="pureaction mb-20 items-center justify-center flex flex-col">
+        <div
+          data-aos="zoom-out"
+          className="pureaction mb-20 items-center justify-center flex flex-col"
+        >
           <h1 className="text-3xl  lg:text-7xl font-bold font-samu text-gray-300">
             Over 5 MILLION
           </h1>
@@ -174,7 +201,7 @@ const Action = () => {
             {" "}
             <button className="bg-orange-600 flex items-center justify-center px-5 py-3 rounded-lg font-samu font-semibold">
               Our Adoption Process
-              <TbArrowBigRightLines className="text-3xl text-black ml-4"/>
+              <TbArrowBigRightLines className="text-3xl text-black ml-4" />
             </button>
           </Link>
         </div>
