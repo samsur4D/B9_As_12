@@ -1,13 +1,17 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import
- logo from '../../assets/paw-pixie-high-resolution-logo-black-transparent.png'
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import logo from '../../assets/paw-pixie-high-resolution-logo-black-transparent.png'
 import { AuthContext } from '../../provider/AuthProvider';
 import toast from 'react-hot-toast';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../provider/AuthProvider'
 
 const Login = () => {
-const navigate = useNavigate()
+const navigate = useNavigate();
+const location = useLocation();
+
+const from = location.state?.from?.pathname || "/"
+
 const { signInWithGoogle } = useContext(AuthContext)
 
 // google sign in 
@@ -15,7 +19,8 @@ const handelgoogleSignIn  = async() =>{
      try {
          await signInWithGoogle()
          toast.success('Sign In Successful')
-         navigate('/')
+        //  navigate('/')
+        navigate(from, {replace: true})
      } catch(err){
         console.log(err)
         toast.error(err?.message)
@@ -30,10 +35,11 @@ const handleSignin = async (e) => {
     console.log(email, password);
 
     try {
-        const result = await signInWithEmailAndPassword(email, password);
+        const result = await signInWithEmailAndPassword(auth , email, password);
         console.log(result);
-        navigate('/');
+        // navigate('/');
         toast.success('Sign In successfully');
+       navigate(from, {replace: true})
     } catch (err) {
         console.log(err);
         toast.error(err?.message);

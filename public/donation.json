@@ -1,183 +1,207 @@
 [
-    {
+  {
       "name": "Buddy",
       "image": "https://example.com/images/pet1.jpg",
       "maxDonationAmount": 1000,
       "donatedAmount": 250,
       "date": "2024-01-01",
       "campaignStatus": "Ongoing",
-      "details": "Buddy was rescued from a shelter and requires medical treatment to recover from a leg injury. The donation campaign was started to cover his surgery and rehabilitation costs. The community has come together to support Buddy, and with your help, we can ensure he gets the care he needs to live a healthy and active life."
-    },
-    {
+      "details": "Buddy was rescued from a shelter and requires medical treatment to recover from a leg injury. The donation campaign was started to cover his surgery and rehabilitation costs. The community has come together to support Buddy, and with your help, we can ensure he gets the care he needs to live a healthy and active life.",
+      "campaignName": "Buddy's Recovery Fund"
+  },
+  {
       "name": "Mittens",
       "image": "https://example.com/images/pet2.jpg",
       "maxDonationAmount": 800,
       "donatedAmount": 300,
       "date": "2023-12-15",
       "campaignStatus": "Ongoing",
-      "details": "Mittens, a gentle and affectionate cat, was found abandoned and in poor health. She needs ongoing medical care and a special diet to regain her strength. Donations will go towards her medical bills and nutritional needs. Every contribution helps Mittens move closer to finding her forever home where she can live a happy and healthy life."
-    },
-    {
+      "details": "Mittens, a gentle and affectionate cat, was found abandoned and in poor health. She needs ongoing medical care and a special diet to regain her strength. Donations will go towards her medical bills and nutritional needs. Every contribution helps Mittens move closer to finding her forever home where she can live a happy and healthy life.",
+      "campaignName": "Mittens' Health Journey"
+  },
+  {
       "name": "Rex",
       "image": "https://example.com/images/pet3.jpg",
       "maxDonationAmount": 1200,
       "donatedAmount": 450,
       "date": "2023-11-20",
       "campaignStatus": "Finished",
-      "details": "Rex, a loyal German Shepherd, was surrendered to the shelter due to his owner's financial difficulties. He requires training and medical attention to treat a skin condition. The donation campaign aims to provide Rex with the necessary care to ensure he is healthy and well-adjusted for his future adoptive family."
-    },
-    {
+      "details": "Rex, a loyal German Shepherd, was surrendered to the shelter due to his owner's financial difficulties. He requires training and medical attention to treat a skin condition. The donation campaign aims to provide Rex with the necessary care to ensure he is healthy and well-adjusted for his future adoptive family.",
+      "campaignName": "Rex's Well-being Initiative"
+  },
+  {
       "name": "Luna",
       "image": "https://example.com/images/pet4.jpg",
       "maxDonationAmount": 700,
       "donatedAmount": 200,
       "date": "2024-01-10",
       "campaignStatus": "Ongoing",
-      "details": "Luna, a sweet kitten, was found alone and underweight. She needs vaccinations, nutritional support, and regular vet check-ups to ensure she grows up healthy. Donations will cover her immediate medical needs and ongoing care. By contributing, you are helping Luna on her journey to finding a loving and permanent home."
-    },
-    {
+      "details": "Luna, a sweet kitten, was found alone and underweight. She needs vaccinations, nutritional support, and regular vet check-ups to ensure she grows up healthy. Donations will cover her immediate medical needs and ongoing care. By contributing, you are helping Luna on her journey to finding a loving and permanent home.",
+      "campaignName": "Luna's Health and Happiness Fund"
+  },
+  {
       "name": "Charlie",
       "image": "https://example.com/images/pet5.jpg",
       "maxDonationAmount": 900,
       "donatedAmount": 350,
       "date": "2023-12-01",
       "campaignStatus": "Ongoing",
-      "details": "Charlie, a calm Golden Retriever, was rescued from a neglectful situation. He needs dental surgery and grooming to improve his quality of life. The donation campaign aims to cover his medical expenses and ensure he receives the care and attention he deserves. Your support will help Charlie find a new family where he can thrive."
-    },
-    {
+      "details": "Charlie, a calm Golden Retriever, was rescued from a neglectful situation. He needs dental surgery and grooming to improve his quality of life. The donation campaign aims to cover his medical expenses and ensure he receives the care and attention he deserves. Your support will help Charlie find a new family where he can thrive.",
+      "campaignName": "Charlie's Dental Care Initiative"
+  },
+  {
       "name": "Bella",
       "image": "https://example.com/images/pet6.jpg",
       "maxDonationAmount": 1100,
       "donatedAmount": 500,
       "date": "2023-10-25",
       "campaignStatus": "Finished",
-      "details": "Bella, a playful Beagle, was found as a stray with a severe ear infection. She needs treatment and follow-up care to fully recover. Donations will help cover her medical bills and ensure she receives the necessary care. With your help, Bella can overcome her health issues and find a loving home."
-    },
-    {
+      "details": "Bella, a playful Beagle, was found as a stray with a severe ear infection. She needs treatment and follow-up care to fully recover. Donations will help cover her medical bills and ensure she receives the necessary care. With your help, Bella can overcome her health issues and find a loving home.",
+      "campaignName": "Bella's Healing Journey"
+  },
+  {
       "name": "Max",
       "image": "https://example.com/images/pet7.jpg",
       "maxDonationAmount": 1000,
       "donatedAmount": 600,
       "date": "2023-11-30",
       "campaignStatus": "Ongoing",
-      "details": "Max, a loving Rottweiler, was abandoned due to his owner's relocation. He needs a heartworm treatment and regular vet check-ups to stay healthy. The donation campaign aims to cover his medical expenses and provide him with a comfortable foster home until he is adopted. Your contribution will make a big difference in Max's life."
-    },
-    {
+      "details": "Max, a loving Rottweiler, was abandoned due to his owner's relocation. He needs a heartworm treatment and regular vet check-ups to stay healthy. The donation campaign aims to cover his medical expenses and provide him with a comfortable foster home until he is adopted. Your contribution will make a big difference in Max's life.",
+      "campaignName": "Max's Wellness Drive"
+  },
+  {
       "name": "Daisy",
       "image": "https://example.com/images/pet8.jpg",
       "maxDonationAmount": 750,
       "donatedAmount": 250,
       "date": "2024-02-01",
       "campaignStatus": "Ongoing",
-      "details": "Daisy, a cheerful Dachshund, was found wandering the streets. She needs spaying and vaccinations to be ready for adoption. Donations will cover her medical expenses and ensure she receives proper care. By contributing, you are helping Daisy prepare for a new life with a loving family."
-    },
-    {
+      "details": "Daisy, a cheerful Dachshund, was found wandering the streets. She needs spaying and vaccinations to be ready for adoption. Donations will cover her medical expenses and ensure she receives proper care. By contributing, you are helping Daisy prepare for a new life with a loving family.",
+      "campaignName": "Daisy's Adoption Readiness Fund"
+  },
+  {
       "name": "Rocky",
       "image": "https://example.com/images/pet9.jpg",
       "maxDonationAmount": 950,
       "donatedAmount": 400,
       "date": "2023-11-10",
       "campaignStatus": "Finished",
-      "details": "Rocky, an active Boxer, was rescued from a dog fighting ring. He needs behavioral therapy and medical treatment for his injuries. The donation campaign aims to cover his rehabilitation costs and help him find a peaceful and loving home. Your support will give Rocky a second chance at a happy life."
-    },
-    {
+      "details": "Rocky, an active Boxer, was rescued from a dog fighting ring. He needs behavioral therapy and medical treatment for his injuries. The donation campaign aims to cover his rehabilitation costs and help him find a peaceful and loving home. Your support will give Rocky a second chance at a happy life.",
+      "campaignName": "Rocky's Recovery Mission"
+  },
+  {
       "name": "Sadie",
       "image": "https://example.com/images/pet10.jpg",
       "maxDonationAmount": 600,
       "donatedAmount": 200,
       "date": "2024-01-15",
       "campaignStatus": "Ongoing",
-      "details": "Sadie, a curious puppy, was found abandoned in a park. She needs vaccinations and nutritional support to grow up healthy. Donations will cover her immediate medical needs and ongoing care. By contributing, you are helping Sadie on her journey to finding a loving and permanent home."
-    },
-    {
-      "name": "Cooper",
-      "image": "https://example.com/images/pet11.jpg",
-      "maxDonationAmount": 850,
-      "donatedAmount": 300,
-      "date": "2023-12-05",
-      "campaignStatus": "Ongoing",
-      "details": "Cooper, a friendly Poodle, was surrendered due to his owner's health issues. He needs grooming, dental care, and regular vet check-ups. The donation campaign aims to cover his medical expenses and ensure he stays healthy and happy while waiting for a new family."
-    },
-    {
-      "name": "Lola",
-      "image": "https://example.com/images/pet12.jpg",
-      "maxDonationAmount": 950,
-      "donatedAmount": 450,
-      "date": "2023-11-15",
-      "campaignStatus": "Finished",
-      "details": "Lola, a calm Shih Tzu, was rescued from a hoarding situation. She needs extensive grooming, dental care, and treatment for a skin condition. Donations will cover her medical expenses and ensure she gets the care she needs. Your support will help Lola recover and find a loving forever home."
-    },
-    {
-      "name": "Oscar",
-      "image": "https://example.com/images/pet13.jpg",
-      "maxDonationAmount": 1200,
-      "donatedAmount": 600,
-      "date": "2023-10-01",
-      "campaignStatus": "Finished",
-      "details": "Oscar, a protective Doberman, was abandoned due to his owner's financial issues. He needs treatment for a joint condition and regular vet check-ups. The donation campaign aims to cover his medical expenses and provide him with the care he needs. Your contribution will help Oscar find a new, loving family."
-    },
-    {
-      "name": "Chloe",
-      "image": "https://example.com/images/pet14.jpg",
-      "maxDonationAmount": 700,
-      "donatedAmount": 300,
-      "date": "2024-02-10",
-      "campaignStatus": "Ongoing",
-      "details": "Chloe, a playful kitten, was found in a dumpster. She needs vaccinations, nutritional support, and treatment for a minor injury. Donations will help cover her medical expenses and ensure she receives the care she needs. By contributing, you are helping Chloe on her journey to finding a loving and permanent home."
-    },
-    {
-      "name": "Duke",
-      "image": "https://example.com/images/pet15.jpg",
-      "maxDonationAmount": 1100,
-      "donatedAmount": 500,
-      "date": "2023-11-25",
-      "campaignStatus": "Ongoing",
-      "details": "Duke, a friendly Border Collie, was surrendered due to his owner's relocation. He needs treatment for an eye condition and regular vet check-ups. The donation campaign aims to cover his medical expenses and ensure he receives the care he needs. Your support will help Duke find a new family where he can thrive."
-    },
-    {
-      "name": "Molly",
-      "image": "https://example.com/images/pet16.jpg",
-      "maxDonationAmount": 800,
-      "donatedAmount": 350,
-      "date": "2023-12-20",
-      "campaignStatus": "Ongoing",
-      "details": "Molly, a sweet Labrador, was found as a stray with a broken leg. She needs surgery and rehabilitation to recover. Donations will cover her medical expenses and ensure she gets the necessary care. With your help, Molly can overcome her injury and find a loving home."
-    },
-    {
-      "name": "Bailey",
-      "image": "https://example.com/images/pet17.jpg",
-      "maxDonationAmount": 1000,
-      "donatedAmount": 400,
-      "date": "2023-10-15",
-      "campaignStatus": "Finished",
-      "details": "Bailey, an affectionate Basset Hound, was surrendered due to his owner's financial difficulties. He needs dental surgery and treatment for a skin condition. The donation campaign aims to cover his medical expenses and provide him with the care he needs. Your contribution will help Bailey find a new, loving family."
-    },
-    {
-      "name": "Sophie",
-      "image": "https://example.com/images/pet18.jpg",
-      "maxDonationAmount": 750,
-      "donatedAmount": 300,
-      "date": "2024-01-05",
-      "campaignStatus": "Ongoing",
-      "details": "Sophie, a gentle cat, was found abandoned and in poor health. She needs medical treatment and nutritional support to recover. Donations will cover her medical expenses and ensure she receives the necessary care. By contributing, you are helping Sophie on her journey to finding a loving and permanent home."
-    },
-    {
-      "name": "Jack",
-      "image": "https://example.com/images/pet19.jpg",
-      "maxDonationAmount": 950,
-      "donatedAmount": 400,
-      "date": "2023-11-05",
-      "campaignStatus": "Ongoing",
-      "details": "Jack, an energetic Terrier, was rescued from a neglectful situation. He needs behavioral therapy and medical treatment for a skin condition. The donation campaign aims to cover his rehabilitation costs and help him find a loving home. Your support will give Jack a second chance at a happy life."
-    },
-    {
-      "name": "Zoey",
-      "image": "https://example.com/images/pet20.jpg",
-      "maxDonationAmount": 900,
-      "donatedAmount": 350,
-      "date": "2023-12-10",
-      "campaignStatus": "Ongoing",
-      "details": "Zoey, a playful Pomeranian, was found wandering the streets. She needs vaccinations and grooming to be ready for adoption. Donations will cover her medical expenses and ensure she receives the necessary care. By contributing, you are helping Zoey prepare for a new life with a loving family."
-    }
-  ]
-  
+      "details": "Sadie, a curious puppy, was found abandoned in a park. She needs vaccinations and nutritional support to grow up healthy. Donations will cover her immediate medical needs and ongoing care. By contributing, you are helping Sadie on her journey to finding a loving and permanent home.",
+      "campaignName": "Sadie's Puppy Wellness Fund"
+  },
+  {
+    "name": "Cooper",
+    "image": "https://example.com/images/pet11.jpg",
+    "maxDonationAmount": 850,
+    "donatedAmount": 300,
+    "date": "2023-12-05",
+    "campaignStatus": "Ongoing",
+    "details": "Cooper, a friendly Poodle, was surrendered due to his owner's health issues. He needs grooming, dental care, and regular vet check-ups. The donation campaign aims to cover his medical expenses and ensure he stays healthy and happy while waiting for a new family.",
+    "campaignName": "Cooper's Health and Happiness Fund"
+},
+{
+    "name": "Lola",
+    "image": "https://example.com/images/pet12.jpg",
+    "maxDonationAmount": 950,
+    "donatedAmount": 450,
+    "date": "2023-11-15",
+    "campaignStatus": "Finished",
+    "details": "Lola, a calm Shih Tzu, was rescued from a hoarding situation. She needs extensive grooming, dental care, and treatment for a skin condition. Donations will cover her medical expenses and ensure she gets the care she needs. Your support will help Lola recover and find a loving forever home.",
+    "campaignName": "Lola's Wellness Journey"
+},
+{
+    "name": "Oscar",
+    "image": "https://example.com/images/pet13.jpg",
+    "maxDonationAmount": 1200,
+    "donatedAmount": 600,
+    "date": "2023-10-01",
+    "campaignStatus": "Finished",
+    "details": "Oscar, a protective Doberman, was abandoned due to his owner's financial issues. He needs treatment for a joint condition and regular vet check-ups. The donation campaign aims to cover his medical expenses and provide him with the care he needs. Your contribution will help Oscar find a new, loving family.",
+    "campaignName": "Oscar's Care Crusade"
+},
+{
+    "name": "Chloe",
+    "image": "https://example.com/images/pet14.jpg",
+    "maxDonationAmount": 700,
+    "donatedAmount": 300,
+    "date": "2024-02-10",
+    "campaignStatus": "Ongoing",
+    "details": "Chloe, a playful kitten, was found in a dumpster. She needs vaccinations, nutritional support, and treatment for a minor injury. Donations will help cover her medical expenses and ensure she receives the care she needs. By contributing, you are helping Chloe on her journey to finding a loving and permanent home.",
+    "campaignName": "Chloe's Kitten Care Fund"
+},
+{
+    "name": "Duke",
+    "image": "https://example.com/images/pet15.jpg",
+    "maxDonationAmount": 1100,
+    "donatedAmount": 500,
+    "date": "2023-11-25",
+    "campaignStatus": "Ongoing",
+    "details": "Duke, a friendly Border Collie, was surrendered due to his owner's relocation. He needs treatment for an eye condition and regular vet check-ups. The donation campaign aims to cover his medical expenses and ensure he receives the care he needs. Your support will help Duke find a new family where he can thrive.",
+    "campaignName": "Duke's Visionary Support"
+},
+{
+    "name": "Molly",
+    "image": "https://example.com/images/pet16.jpg",
+    "maxDonationAmount": 800,
+    "donatedAmount": 350,
+    "date": "2023-12-20",
+    "campaignStatus": "Ongoing",
+    "details": "Molly, a sweet Labrador, was found as a stray with a broken leg. She needs surgery and rehabilitation to recover. Donations will cover her medical expenses and ensure she gets the necessary care. With your help, Molly can overcome her injury and find a loving home.",
+    "campaignName": "Molly's Healing Journey"
+},
+{
+    "name": "Bailey",
+    "image": "https://example.com/images/pet17.jpg",
+    "maxDonationAmount": 1000,
+    "donatedAmount": 400,
+    "date": "2023-10-15",
+    "campaignStatus": "Finished",
+    "details": "Bailey, an affectionate Basset Hound, was surrendered due to his owner's financial difficulties. He needs dental surgery and treatment for a skin condition. The donation campaign aims to cover his medical expenses and provide him with the care he needs. Your contribution will help Bailey find a new, loving family.",
+    "campaignName": "Bailey's Health Quest"
+},
+{
+    "name": "Sophie",
+    "image": "https://example.com/images/pet18.jpg",
+    "maxDonationAmount": 750,
+    "donatedAmount": 300,
+    "date": "2024-01-05",
+    "campaignStatus": "Ongoing",
+    "details": "Sophie, a gentle cat, was found abandoned and in poor health. She needs medical treatment and nutritional support to recover. Donations will cover her medical expenses and ensure she receives the necessary care. By contributing, you are helping Sophie on her journey to finding a loving and permanent home.",
+    "campaignName": "Sophie's Path to Wellness"
+},
+{
+    "name": "Jack",
+    "image": "https://example.com/images/pet19.jpg",
+    "maxDonationAmount": 950,
+    "donatedAmount": 400,
+    "date": "2023-11-05",
+    "campaignStatus": "Ongoing",
+    "details": "Jack, an energetic Terrier, was rescued from a neglectful situation. He needs behavioral therapy and medical treatment for a skin condition. The donation campaign aims to cover his rehabilitation costs and help him find a loving home. Your support will give Jack a second chance at a happy life.",
+    "campaignName": "Jack's Rehabilitation Journey"
+},
+{
+    "name": "Zoey",
+    "image": "https://example.com/images/pet20.jpg",
+    "maxDonationAmount": 900,
+    "donatedAmount": 350,
+    "date": "2023-12-10",
+    "campaignStatus": "Ongoing",
+    "details": "Zoey, a playful Pomeranian, was found wandering the streets. She needs vaccinations and grooming to be ready for adoption. Donations will cover her medical expenses and ensure she receives the necessary care. By contributing, you are helping Zoey prepare for a new life with a loving family.",
+    "campaignName": "Zoey's Road to Adoption"
+}
+]
+
+
+
+
+

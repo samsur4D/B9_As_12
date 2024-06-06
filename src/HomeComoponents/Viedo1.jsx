@@ -1,29 +1,39 @@
-import React from 'react';
-import vdo from '../assets/mixkit-sleepy-kitten-watching-a-toy-behind-the-camera-45406-hd-ready.mp4'
-import vdo2 from '../assets/31936-360.mp4'
-import { Link } from 'react-router-dom';
-import dualdog from '../assets/dualdog.jpg'
+import React from "react";
+import vdo from "../assets/mixkit-sleepy-kitten-watching-a-toy-behind-the-camera-45406-hd-ready.mp4";
+import vdo2 from "../assets/31936-360.mp4";
+import { Link } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 
 const Viedo1 = () => {
-    return (
-        <div>
-              <div className="video-container">
-        <video autoPlay loop muted>
+  return (
+    <div className="relative">
+      <div className="video-container">
+        <video className="w-full" autoPlay loop muted>
           <source src={vdo} type="video/mp4" />
-          {/* <source src={vdo2} type="video/mp4" /> */}
-          Your browser does not support the video tag.
         </video>
-        <div className="content  py-10 px-10  ">
+        <div className="absolute  inset-0 flex flex-col items-center justify-center">
+          <span style={{ color: 'white', fontWeight: 'bold' }} className="text-white text-3xl lg:text-8xl font-bold font-samu h-full w-full bg-black bg-opacity-20 px-3 lg:px-4 py-5 rounded">
+          <br />
+          <Typewriter
+            words={['" Every Paw Deserves a Loving Home. Donate Today and Save them All "']}
+            loop={20}
+            cursor
+            cursorStyle='_'
+            typeSpeed={120}
             
+            deleteSpeed={150}
+            delaySpeed={1000}
             
-     <div className='bg-black bg-opacity-30 rounded-xl '>
-     <h1 className=' lg:text-5xl mt-96 font-samu  text-center'>Every Paw Deserves a Loving Home. Donate Today.</h1>
-     <Link> <button className="bg-orange-600 mt-5 mb-5  px-10 py-8 rounded-lg font-samu font-semibold">---DONATE---</button></Link>
-     </div>
+          />
+          
+         
+          </span>
+          
         </div>
       </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Viedo1;
+

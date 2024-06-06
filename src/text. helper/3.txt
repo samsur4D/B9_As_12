@@ -1,0 +1,33 @@
+{
+  "_id": "665f9eae2f7a30cc847d3faa",
+  "name": "Buddy",
+  "status": "Dog",
+  "age": 2,
+  "breed": "Golden Retriever",
+  "location": "Cox's Bazar-Teknaf",
+  "details": "Collaboratively whiteboard standards compliant meta-services and stick…",
+  "longDescription": "Buddy is a friendly and energetic dog who loves long walks and playing…",
+  "adopted": false,
+  "addemail": "user7@gmail.com",
+  "adddate": "2024-06-04",
+  "image": "https://i.ibb.co/pwczLMD/baptist-standaert-mx0-DEnf-Yxic-unsplash.jpg"
+}
+
+
+
+
+
+{
+    "_id": "665fd4d92f7a30cc847d3fc4",
+    "adoptId": "665f9eee2f7a30cc847d3fab",
+    "email": "patarehan14600@gmail.com",
+    "username": "Samsur Rahman",
+    "addemail": "user7@gmail.com",
+    "adddate": "2024-06-04",
+    "name": "Mittens",
+    "image": "https://i.ibb.co/M2rYcQR/nabih-e-navarro-e-Hem-HVexl-AY-unsplash.jpg",
+    "age": 2,
+    "phone": "22222222222222222222222222222",
+    "address": "1093, কাঠালতলা পানির পাম্প,গরুর খামার,মিরপুর+২",
+    "message": ""
+}

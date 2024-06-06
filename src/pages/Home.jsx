@@ -19,9 +19,18 @@ import PetCategoryHome from "../HomeComoponents/PetCategoryHome";
 
 const Home = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Slider></Slider>
       <Viedo1></Viedo1>
+      {/* ------------------------------------------------ */}
+    
+      {/* ------------------------------------------------ */}
+      <Link className="flex justify-center">
+        {" "}
+        <button className="mt-5 px-6 py-3 font-samu bg-orange-500 text-white text-lg lg:text-2xl font-semibold rounded hover:bg-orange-700 transition duration-300">
+          Donate Now
+        </button>{" "}
+      </Link>
 
       <SectionTWo></SectionTWo>
 
@@ -34,8 +43,19 @@ const Home = () => {
 
       <Cute></Cute>
       <div>
-        <h1 className="font-samu font-bold text-5xl text-center">Pet Category Section</h1>
-        <p className="font-samu font-semibold text-gray-500 mt-5 text-xl text-center">Explore our furry of the companions in the pet category! From playful dogs to curious cats, our selection <br /> features the most adorable companions. Please note, at the moment, we exclusively offer <p data-aos="flip-up" className="mb-2"><span className="text-6xl text-orange-600">cats</span > and <span className="text-6xl text-[#009688]"> dogs</span></p> for adoption. Find your new best friend today!"</p>
+        <h1 className="font-samu font-bold text-5xl text-center">
+          Pet Category Section
+        </h1>
+        <p className="font-samu font-semibold text-gray-500 mt-5 text-xl text-center">
+          Explore our furry of the companions in the pet category! From playful
+          dogs to curious cats, our selection <br /> features the most adorable
+          companions. Please note, at the moment, we exclusively offer{" "}
+          <p data-aos="flip-up" className="mb-2">
+            <span className="text-6xl text-orange-600">cats</span> and{" "}
+            <span className="text-6xl text-[#009688]"> dogs</span>
+          </p>{" "}
+          for adoption. Find your new best friend today!"
+        </p>
       </div>
       <PetCategoryHome></PetCategoryHome>
       <Action></Action>

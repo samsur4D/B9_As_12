@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import logo from "../assets/lolo.png";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router-dom";
+import useCart from "../Hooks/useCart";
 
 const Nav = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [cart] = useCart();
 
   return (
     <div className="navbar  shadow-sm  bg-transparent   bg-opacity-30 px-4 mx-auto">
@@ -16,30 +18,46 @@ const Nav = () => {
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
           <li className="hidden lg:block">
-            <Link to="/" className="text-lg ml-5 bg-gray-600 font-samu text-white">
+            <Link
+              to="/"
+              className="text-lg ml-5 bg-gray-600 font-samu text-white"
+            >
               Home
             </Link>
           </li>
           <li className="hidden lg:block">
-            <Link to="/petlisting" className="text-lg ml-5 bg-gray-600 font-samu text-white">
+            <Link
+              to="/petlisting"
+              className="text-lg ml-5 bg-gray-600 font-samu text-white"
+            >
               Pet Listing
             </Link>
           </li>
           <li className="hidden lg:block">
-            <Link to="/" className="text-lg ml-5 font-samu bg-gray-600 text-white">
+            <Link
+              to="/"
+              className="text-lg ml-5 font-samu bg-gray-600 text-white"
+            >
               Donation
             </Link>
           </li>
           <li className="hidden lg:block">
-            <Link to="/" className="text-lg ml-5 font-samu bg-gray-600 text-white">
+            <Link
+              to="/campaigns"
+              className="text-lg ml-5 font-samu bg-gray-600 text-white"
+            >
               Campaigns
             </Link>
           </li>
           <li className="hidden lg:block">
-            <Link to="/" className="text-lg ml-5 font-samu bg-gray-600 text-white">
-             My Campaigns
+            <Link
+              to="/"
+              className="text-lg ml-5 font-samu bg-gray-600 text-white"
+            >
+              My Campaigns
             </Link>
           </li>
+          <li className="hidden lg:block"></li>
           {user ? (
             ""
           ) : (
@@ -73,7 +91,7 @@ const Nav = () => {
               role="button"
               className="btn btn-ghost btn-circle avatar"
             >
-              <div title={user?.displayName} className="w-20  rounded-full">
+              <div  title={user?.displayName} className="w-20  rounded-full">
                 <img
                   referrerPolicy="no-referrer"
                   alt="User Profile Photo"
@@ -97,8 +115,53 @@ const Nav = () => {
               <li className="block lg:hidden">
                 <Link to="/">Campaigns</Link>
               </li>
+
               <li className="font-samu block text-center">
-                <Link to="/">Dashboard</Link>
+                <Link to="/dashboard/addapet">
+                  Dahboard
+                  <div className="badge">+{cart.length}</div>
+                </Link> 
+             
+                 
+
+{/* --------------------- */}
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {/* ------------------------ */}
               </li>
               <li className="mt-2 ">
                 <button

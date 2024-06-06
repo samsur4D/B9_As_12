@@ -6,6 +6,10 @@
 @tailwind utilities;
 
 
+/* *{
+  border: 1px solid red
+} */
+
 .card-body{
     visibility: hidden;
    
@@ -95,3 +99,161 @@
 .petdog:hover .petdoginner {
     visibility: visible;
 }
+
+.extra-section{
+    background-image: url('https://i.ibb.co/k2JbWXZ/black1.jpg');
+    background-position: center;
+    height: 5500px;
+    margin-bottom: 100px;
+    background-size: cover;
+    border-radius: 30px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    object-fit: cover;
+  }
+
+  .final-hw{
+    background-image: url('https://i.ibb.co/BsBdfDL/james-lacy-5w3o-IN-0-Lzs-unsplash.jpg');
+    height: 600px;
+    
+  } 
+  .finaly-hw{
+    background-image: url('https://i.ibb.co/YRyzJDn/IMG-20231205-185243-665.jpg');
+    height: 600px;
+    
+  } 
+  .finaly1-hw{
+    background-image: url('https://i.ibb.co/7C6m86B/yan-laurichesse-3q-Zn-N-M45-Ds-unsplash.jpg');
+    height: 600px;
+    
+  } 
+  .finaly2-hw{
+    background-image: url('https://i.ibb.co/k0mLSB8/bruno-cervera-azsk-6-IMT3-I-unsplash.jpg');
+    height: 600px;
+    
+  } 
+  .finaly3-hw{
+    background-image: url('https://i.ibb.co/sm63Wz7/ragi.webp');
+    height: 600px;
+    
+  } 
+  .petlistbanner{
+    background-image: url('https://i.ibb.co/gwSVsCy/i-Stock-1186973591-1-1800x777.jpg');
+    height: 600px;
+    
+  } 
+  .catsbanner{
+    background-image: url('https://i.ibb.co/6NcXNV3/cat-mapper-max-ogden-Ecs-Ce-S6ha-J8-unsplash.webp');
+    /* background-image: url('https://i.ibb.co/q1YWsRM/istockphoto-2149523968-612x612.jpg'); */
+    height: 850px;
+    
+  } 
+  .dogsbanner{
+    background-image: url('https://i.ibb.co/N77yK6q/sam-mcnamara-l-Bd-Vj-Qcf-SRQ-unsplash.webp');
+    /* background-image: url('https://i.ibb.co/tLmkWvz/group-adorable-puppies-on-white-260nw-1982821883.jpg'); */
+    height: 850px;
+    
+  } 
+  .campa{
+    background-image: url('https://i.ibb.co/wpnXHFb/alvan-nee-1-Vgf-Qd-Cu-X-4-unsplash.jpg');  
+    background-position: center;
+    height: 750px;
+    margin-bottom: 100px;
+    background-size: cover;
+    border-radius: 30px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    object-fit: cover;
+  } 
+  .rampa{
+    background-image: url('https://i.ibb.co/9tLm8Cj/zhang-kaiyv-ECf-Pmk-OVZPA-unsplash.jpg');  
+    background-position: center;
+    height: 750px;
+    margin-bottom: 100px;
+    background-size: cover;
+    border-radius: 30px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    object-fit: cover;
+  } 
+  .dash{
+    /* background-image: url('https://i.ibb.co/9tLm8Cj/zhang-kaiyv-ECf-Pmk-OVZPA-unsplash.jpg');   */
+    background-image: url('https://i.ibb.co/cDCgw0b/marin-tulard-Qd-D8-Nw-Vjl-GU-unsplash.jpg');  
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    object-fit: cover;
+  } 
+
+
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+  }
+  
+  .video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+  }
+  
+  .video-container .content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+
+  
+
+  

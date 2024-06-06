@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Dogs = () => {
   const [pets, setPets] = useState([]);
   useEffect(() => {
-    fetch("pet.json")
+    window.scrollTo(0, 0);
+    fetch("http://localhost:5000/pet")
       .then((res) => res.json())
       .then((data) => {
         const dogs = data.filter((pet) => pet.status === "Dog");
@@ -55,7 +57,7 @@ const Dogs = () => {
               </h2>
               <p>Click the button to listen on Spotiwhy app.</p>
               <div className="card-actions justify-end">
-                <button className="btn btn-primary">Listen</button>
+              <NavLink to={`/details/${pet._id}`}> <button className="btn btn-primary">View Details</button></NavLink>
               </div>
             </div>
           </div>

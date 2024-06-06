@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 import { IoLogoOctocat } from "react-icons/io";
 import { PiDogBold } from "react-icons/pi";
+import { NavLink } from "react-router-dom";
 
 const PetListing = () => {
   const [pets, setPets] = useState([]);
@@ -9,11 +10,13 @@ const PetListing = () => {
   const [category, setCategory] = useState("");
 
   useEffect(() => {
-    fetch("pet.json")
+    window.scrollTo(0, 0);
+    fetch("http://localhost:5000/pet")
       .then((res) => res.json())
       .then((data) => setPets(data));
   }, []);
 
+  console.log(pets);
   const filteredPets = pets.filter((pet) => {
     return (
       pet.breed.toLowerCase().includes(searchTerm.toLowerCase()) &&
@@ -51,18 +54,22 @@ const PetListing = () => {
             <p className="mb-5 text-2xl font-bold">
               Search by dog ​​and cat{" "}
               <span className="text-orange-500 text-5xl">Breed names</span>
-              <p className="text-xl mt-3">If you want, you can see the names of dog and cat breeds from below</p>
+              <p className="text-xl mt-3">
+                If you want, you can see the names of dog and cat breeds from
+                below
+              </p>
             </p>
           </div>
         </div>
       </div>
       <Marquee speed={150} className="mb-24">
         <p className="font-bold flex font-samu bg-[#fab1a0] py-5 text-4xl">
-          <PiDogBold className="text-7xl" />Dogs Breed: Golden Retriever, German Shepherd Mix, Labrador Retriever,
+          <PiDogBold className="text-7xl" />
+          Dogs Breed: Golden Retriever, German Shepherd Mix, Labrador Retriever,
           Australian Shepherd Mix, Beagle, Cocker Spaniel, Border Collie, Shih
-          Tzu, Boxer, Rottweiler, Australian Shepherd ____<IoLogoOctocat className="text-7xl" /> Cats Breed: Domestic
-          Shorthair, Siamese, Maine Coon, Persian, Ragdoll, Siberian, Bengal,
-          Tabby__
+          Tzu, Boxer, Rottweiler, Australian Shepherd ____
+          <IoLogoOctocat className="text-7xl" /> Cats Breed: Domestic Shorthair,
+          Siamese, Maine Coon, Persian, Ragdoll, Siberian, Bengal, Tabby__
         </p>
       </Marquee>
 
@@ -79,18 +86,40 @@ const PetListing = () => {
                 alt="Album"
               />
             </figure>
-            <div className="w-[550px] h-[420px] px-3 bg-[#dfe6e9] py-16">
-              <h2 className="card-title mb-1 text-sm font-bold font-samu">
+            <div className="w-[550px] h-[420px] flex flex-col  border border-[#2c2c54] px-3 bg-[#dfe6e9] py-16">
+            <div className="flex-1">
+            <h2 className="card-title mb-1 text-sm font-bold font-samu">
                 Name: {pet.name}
               </h2>
-              <h2 className="text-sm font-bold mb-3 font-samu">Age: {pet.age}</h2>
-              <h2 className="text-sm font-bold mb-3 font-samu">Breed: {pet.breed}</h2>
-              <h2 className="text-sm font-bold mb-3 font-samu">Location: {pet.location}</h2>
-              <h2 className="text-sm font-bold mb-3 font-samu">Vaccine: {pet.vaccine}Vaccinated</h2>
-              <h2 className="text-sm font-bold mb-3 font-samu">Date: {pet.date}</h2>
-             
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Listen</button>
+              <h2 className="text-sm font-bold mb-3 font-samu">
+                Age: {pet.age}
+              </h2>
+              <h2 className="text-sm font-bold mb-3 font-samu">
+                Breed: {pet.breed}
+              </h2>
+              <h2 className="text-sm font-bold mb-3 font-samu">
+                Location: {pet.location}
+              </h2>
+              <h2 className="text-sm font-bold mb-3 font-samu">
+                Vaccine: {pet.vaccine}Vaccinated
+              </h2>
+              <h2 className="text-sm font-bold mb-3 font-samu">
+                Date: {pet.adddate}
+              </h2>
+            </div>
+
+              <div className="card-actions  flex justify-between">
+                <button
+                  className={`btn btn-primary ${
+                    pet.adopted ? "bg-yellow-700" : "bg-green-700"
+                  }`}
+                >
+                  {pet.adopted ? "Not AvailAble" : "Adopted"}
+                </button>
+                <NavLink to={`/details/${pet._id}`}>
+                  {" "}
+                  <button className="btn btn-primary">View Details</button>{" "}
+                </NavLink>
               </div>
             </div>
           </div>
@@ -101,3 +130,8 @@ const PetListing = () => {
 };
 
 export default PetListing;
+
+{
+  /* <button className="btn btn-primary bg-green-700">Adopted</button>
+<button className="btn btn-primary bg-yellow-700">Available</button> */
+}
