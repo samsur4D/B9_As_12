@@ -18,27 +18,28 @@ const Donation = () => {
     return (
 		<>
 		<Viedo121></Viedo121>
-        <div className='grid grid-cols-3 px-5 gap-5'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 px-24 py-16 mb-24  gap-5'>
            {
             campaigns.map(item => (
-                <div key={item._id} className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
+                <div key={item._id} className="flex border hover:bg-gray-300 hover:scale-[1.40] bg-white transition-all flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-x">
 	<div className="flex space-x-4">
-		<img alt="" src="https://source.unsplash.com/100x100/?portrait" className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
+		<img alt="" src={item.userPhoto} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
 		<div className="flex flex-col space-y-1">
-			<a rel="noopener noreferrer" href="#" className="text-sm font-semibold">Leroy Jenkins</a>
+			<a rel="noopener noreferrer" href="#" className="text-sm font-semibold">{item.userName}</a>
 			<span className="text-xs dark:text-gray-600">4 hours ago</span>
 		</div>
 	</div>
 	<div>
-		<img src={item.image} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
-		<h2 className="mb-1 text-xl font-semibold">{item.campaignName}</h2>
+		<img src={item.petPicture} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
+		<h2 className="mb-1 text-2xl font-bold ml">{item.campaignsName
+}</h2>
 		<h2 className="mb-1 text-xl font-semibold">{item.date}</h2>
 		<div className='flex justify-between'>
         <h2 className="mb-1 text-xl font-semibold">Need:{item.maxDonationAmount}</h2>
 		<h2 className="mb-1 text-xl font-semibold">Currently Have:{item.donatedAmount}</h2>
         </div>
         <h2 className="mb-1 text-orange-500 text-xl font-semibold">{item.campaignStatus}</h2>
-		<p className="text-sm dark:text-gray-600">{item.details}</p>
+		<p className="text-sm dark:text-gray-600">{item.shortDescription}</p>
 	</div>
 	<div className="flex flex-wrap justify-between">
 		<div className="space-x-2">
@@ -52,6 +53,9 @@ const Donation = () => {
 					<path d="M424,496H388.75L256.008,381.19,123.467,496H88V16H424ZM120,48V456.667l135.992-117.8L392,456.5V48Z"></path>
 				</svg>
 			</button>
+		</div>
+		<div>
+			<button className='p-4 bg-blue-500 rounded-md text-white font-bold'>View details</button>
 		</div>
 		<div className="flex space-x-2 text-sm dark:text-gray-600">
 			<button type="button" className="flex items-center p-1 space-x-1.5">

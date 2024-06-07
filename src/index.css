@@ -160,11 +160,11 @@
   .campa{
     background-image: url('https://i.ibb.co/wpnXHFb/alvan-nee-1-Vgf-Qd-Cu-X-4-unsplash.jpg');  
     background-position: center;
-    height: 750px;
-    margin-bottom: 100px;
+    height: 480px;
+   
     background-size: cover;
     border-radius: 30px;
-    margin-top: 20px;
+   
     display: flex;
     align-items: center;
     justify-content: center;

@@ -18,6 +18,7 @@ import MyDonationCampa from '../Dashboard Page/MyDonationCampa'
 import MyDonations from '../Dashboard Page/MyDonations'
 import DashUpdate from "../Dashboard Page/DashUpdate";
 import Error from "../pages/Error";
+import Contact from "../pages/Contact";
 
 
   const router = createBrowserRouter([
@@ -29,6 +30,10 @@ import Error from "../pages/Error";
         {
             index: true,
             element: <Home></Home>
+        },
+        {
+           path: '/contact',
+           element: <Contact></Contact>
         },
         {
           path: '/petlisting',
@@ -92,7 +97,6 @@ import Error from "../pages/Error";
         {
           path: 'update/:id',
           element: <DashUpdate></DashUpdate>,
-          // loader: ({params}) => fetch(`http://localhost:5000/pet/${params.id}`)
         }
        
       ]

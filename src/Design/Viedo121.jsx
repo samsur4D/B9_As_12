@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import video from "../assets/PetSmartCharities_60_Anthem_16x9_US v2.mp4";
 import { FaGooglePlay, FaPauseCircle } from "react-icons/fa";
-import { BiSolidDownArrowSquare, BiSolidLeftArrowSquare } from "react-icons/bi";
+import { BiSolidDownArrowSquare } from "react-icons/bi";
+import Marquee from "react-fast-marquee";
 
 const Viedo121 = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -21,19 +22,21 @@ const Viedo121 = () => {
   };
 
   return (
-    <div className="flex items-center justify-center">
-      {!isPlaying && (
+  <div className=" lg:mt-52 lg:mb-40 ">
+    {/* <Marquee speed={200}><h1 className="text-3xl py-3 font-samu px-5"> __Enjoy Our Celebration Viedo  .....And Give US Your Review ---💛</h1></Marquee> */}
+      <div className="flex items-center justify-center h-[600px]">
+      {/* {!isPlaying && (
         <div className="campa bg-red">
-          <section className="mt-32 bg-black bg-opacity-30">
-            <div className="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl">
-              <h1 className="text-md text-white font-samu font-semibold leading-none">
+          <section className="mt-32 ">
+            <div className="container mx-auto flex flex-col items-center px-4 py-16 text-center  ">
+              <h1 className="text-md text-gray-600 text-opacity-50 font-samu font-semibold leading-none">
                 CELEBRATING A MILESTONE
               </h1>
-              <p className="px-8 text-white mt-8 mb-12 text-5xl font-samu font-bold">
+              <p className="px-8 text-gray-600 mt-8 mb-12 text-5xl font-samu font-bold">
                 10 Million Pets Adopted
               </p>
-              <div className="flex-col text-white flex-wrap justify-center">
-                <button className="px-8 py-3 m-2 text-xl font-bold rounded font-samu text-white">
+              <div className="flex-col text-gray-600 flex-wrap justify-center">
+                <button className="px-8 py-3 m-2 text-xl font-bold rounded font-samu text-opacity-80 text-gray-600">
                   Our Campaigns
                 </button>
                 <BiSolidDownArrowSquare className="ml-20 text-9xl animate-bounce" />
@@ -41,12 +44,12 @@ const Viedo121 = () => {
             </div>
           </section>
         </div>
-      )}
+      )} */}
       <div className="video-container w-full h-full">
         <div>
          
         </div>
-        <video className="w-full h-full" ref={videoRef} loop>
+        <video className="" ref={videoRef} loop>
           <source className="w-full h-full" src={video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -55,9 +58,9 @@ const Viedo121 = () => {
           <div className="bg-transparent rounded-xl">
             <button onClick={toggleVideo} className="play-button mt-80">
               {isPlaying ? (
-                <FaPauseCircle className="text-7xl text-black text-opacity-60" />
+                <FaPauseCircle className="text-9xl text-black text-opacity-60" />
               ) : (
-                <FaGooglePlay className="text-7xl text-black text-opacity-60" />
+                <FaGooglePlay className="text-9xl text-black text-opacity-60" />
               )}
             </button>
           </div>
@@ -88,6 +91,7 @@ const Viedo121 = () => {
         </div>
       )} */}
     </div>
+  </div>
   );
 };
 

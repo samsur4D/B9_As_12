@@ -1,7 +1,8 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useId, useMemo, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useTable, usePagination } from "react-table";
 import useAuth from "../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 const MyAddedPets = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const MyAddedPets = () => {
       .then(data => {
         const filteredData = data
           .filter(pet => pet.addemail === user.email)
-          .map((pet, index) => ({ ...pet, index: index + 1 }));
+          .map((pet) => ({ ...pet }));
         setPets(filteredData);
       });
   }, [userEmail]);
@@ -24,10 +25,7 @@ const MyAddedPets = () => {
 
   const columns = useMemo(
     () => [
-      {
-        Header: "Pet Index",
-        accessor: "index",
-      },
+     
       {
         Header: "Pet Name",
         accessor: "name",
@@ -84,11 +82,45 @@ const MyAddedPets = () => {
     [navigate]
   );
 
+
+  
   const handleDelete = (id) => {
-    if (window.confirm("Are you sure you want to delete this pet?")) {
-      console.log(`Pet with id ${id} deleted`);
-      // Add your delete logic here, e.g., API call to delete the pet
+    console.log(id);
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      fetch(`http://localhost:5000/pet/${id}`, {
+        method: "DELETE"
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            // Filter out the deleted item from the state
+            const updatedpets = pets.filter(item => item._id !== id);
+           console.log(updatedpets);
+             // Update the state
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your Spot has been deleted.",
+              icon: "success"
+            });
+            setPets(updatedpets);
+          }
+        })
+        .catch(error => {
+          console.error("Error deleting spot:", error);
+          // Handle error if deletion fails
+        });
     }
+  });
   };
 
   const toggleAdoptionStatus = (id) => {
@@ -135,7 +167,8 @@ const MyAddedPets = () => {
         <table {...getTableProps()} className="min-w-full bg-black text-white bg-opacity-50">
           <thead>
             {headerGroups.map(headerGroup => (
-              <tr {...headerGroup.getHeaderGroupProps()}>
+              <tr key={useId()} {...headerGroup.getHeaderGroupProps()}>
+                <th className="text-white text-xl">Pet Index</th>
                 {headerGroup.headers.map(column => (
                   <th
                     {...column.getHeaderProps()}
@@ -148,10 +181,11 @@ const MyAddedPets = () => {
             ))}
           </thead>
           <tbody {...getTableBodyProps()}>
-            {page.map(row => {
+            {page.map((row , index) => {
               prepareRow(row);
               return (
                 <tr {...row.getRowProps()}>
+                  <td>{index+1}</td>
                   {row.cells.map(cell => (
                     <td
                       {...cell.getCellProps()}

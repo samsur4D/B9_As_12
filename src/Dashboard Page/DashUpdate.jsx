@@ -26,7 +26,6 @@ const DashUpdate = () => {
     const fetchPetData = async () => {
 
       try {
-        // const petRes = await axiosPublic.get(`/pet/${petId}`);
         const petRes = await axiosPublic.get(`/pet/${id}`);
         const petData = petRes.data;
         console.log(petData);
@@ -92,13 +91,13 @@ const DashUpdate = () => {
         image: data.image
       };
 
-      const petRes = await axiosPublic.put(`/pet/${petId}`, updatedPet);
+      const petRes = await axiosPublic.put(`/pet/${id}`, updatedPet);
 
       if (petRes.data.modifiedCount > 0) {
         reset();
         Swal.fire({
           icon: "success",
-          title: `Your ${data.name} Has Been Updated in PawPixi's Collection`,
+          title: `Your Pet => ${data.name} Has Been Updated in PawPixi's Collection`,
           showConfirmButton: false,
           timer: 1500
         });

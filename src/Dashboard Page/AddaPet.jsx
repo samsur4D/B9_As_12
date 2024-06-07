@@ -18,11 +18,10 @@ const AddAPet = () => {
   const onSubmit = async (data) => {
     try {
       const formData = new FormData();
-      formData.append("image", data.image[0]);  // Assuming the API expects the field name to be "image"
-
-      // Format the date
+      formData.append("image", data.image[0]);  
+  
       const isoDate = new Date().toISOString();
-      data.date = isoDate.substring(0, 10); // Extracts the "YYYY-MM-DD" part
+      data.date = isoDate.substring(0, 10); 
       data.adopted = false;
       data.addEmail = user.email;
 
@@ -34,13 +33,13 @@ const AddAPet = () => {
       
       if (res.data && res.data.data && res.data.data.url) {
         setImageUrl(res.data.data.url);
-        data.image = res.data.data.url; // Set the image URL returned by the API to data
+        data.image = res.data.data.url; 
 
         
         console.log(res.data);
         console.log(data);
         if(res.data.success){
-              // Now you can save the data to your database here
+             
               const pet = {
                 name: data.name,
                 status: data.petCategory.value,

@@ -1,0 +1,24 @@
+{
+"_id": "6662955778008f4162cc920a",
+"lastDateOfDonation": "2024-06-01",
+"longDescription": "Sophie, a gentle cat, was found abandoned and in poor health. She needs medical treatment and nutritional support to recover. Donations will cover her medical expenses and ensure she receives the necessary care. By contributing, you are helping Sophie on her journey to finding a loving and permanent home.",
+"maxDonationAmount": "250",
+"shortDescription": "Sophie, a gentle cat, was found abandoned and in poor health. She needs medical treatment and nutritional support to recover.",
+"donatedAmount": "90",
+"campaignsName": "Sophie's Path to Wellness",
+"petPicture": "https://i.ibb.co/SPzwQN5/36a38985-a93f-4d82-a692-acc5cf51c56c.jpg"
+},
+
+
+
+import React from 'react';
+
+const MyDonationCampa = () => {
+    return (
+        <div>
+              <h1>My Camapigns</h1>
+        </div>
+    );
+};
+
+export default MyDonationCampa;

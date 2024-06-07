@@ -4,6 +4,7 @@ import { FcBusinessContact, FcHome, FcSearch } from "react-icons/fc";
 import { MdCampaign, MdOutlineCampaign, MdOutlinePets } from "react-icons/md";
 import { SiPetsathome } from "react-icons/si";
 import { NavLink, Outlet } from "react-router-dom";
+import { AiFillSound } from "react-icons/ai";
 
 const Dashboard = () => {
   return (
@@ -38,7 +39,11 @@ const Dashboard = () => {
             <NavLink className="text-2xl text-gray-300 mt-2" to="/petlisting"> <FcSearch className="text-2xl text-gray-300 mt-2"/>  Search Pet</NavLink>
           </li>
           <li>
-            <NavLink className="text-2xl text-gray-300 mt-2" to="/"> <FcBusinessContact className="text-2xl text-gray-300 mt-2"/>  Contact</NavLink>
+            <NavLink className="text-2xl text-gray-300 mt-2" to="/campaigns"> <AiFillSound className="text-2xl text-red-500 mt-2"/>Campaigns</NavLink>
+          </li>
+         
+          <li>
+            <NavLink className="text-2xl text-gray-300 mt-2" to="/contact"> <FcBusinessContact className="text-2xl text-gray-300 mt-2"/>  Contact</NavLink>
           </li>
         </ul>
         
