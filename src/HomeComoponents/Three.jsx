@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Three = () => {
   return (
@@ -19,7 +20,7 @@ const Three = () => {
        <p>We’re saving more animals now than at any point in our history, but our work isn’t done until every dog and cat gets the chance to know care and companionship … in a safe and loving home. </p>
        
        </div>
-        <button className="bg-orange-600 px-5 py-3 rounded-lg font-semibold">Get Started</button>
+        <NavLink to='/about'><button className="bg-orange-600 px-5 py-3 rounded-lg font-semibold">Explore More</button></NavLink>
       </div>
     
     </div>

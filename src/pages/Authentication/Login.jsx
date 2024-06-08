@@ -5,6 +5,7 @@ import { AuthContext } from '../../provider/AuthProvider';
 import toast from 'react-hot-toast';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../provider/AuthProvider'
+import SocialLogin from './SocialLogin';
 
 const Login = () => {
 const navigate = useNavigate();
@@ -15,17 +16,20 @@ const from = location.state?.from?.pathname || "/"
 const { signInWithGoogle } = useContext(AuthContext)
 
 // google sign in 
-const handelgoogleSignIn  = async() =>{
-     try {
-         await signInWithGoogle()
-         toast.success('Sign In Successful')
-        //  navigate('/')
-        navigate(from, {replace: true})
-     } catch(err){
-        console.log(err)
-        toast.error(err?.message)
-     }
-}
+// const handelgoogleSignIn  = async() =>{
+//      try {
+//          await signInWithGoogle()
+//          toast.success('Sign In Successful')
+//         //  navigate('/')
+//         navigate(from, {replace: true})
+//      } catch(err){
+//         console.log(err)
+//         toast.error(err?.message)
+//      }
+// }
+
+
+
 // email,pass
 const handleSignin = async (e) => {
     e.preventDefault();
@@ -74,7 +78,7 @@ const handleSignin = async (e) => {
               Welcome back!
             </p>
   
-            <div onClick={handelgoogleSignIn} className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 '>
+            {/* <div onClick={handelgoogleSignIn} className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 '>
               <div className='px-4 py-2'>
                 <svg className='w-6 h-6' viewBox='0 0 40 40'>
                   <path
@@ -99,7 +103,8 @@ const handleSignin = async (e) => {
               <span className='w-5/6 px-4 py-3 font-bold text-center'>
                 Sign in with Google
               </span>
-            </div>
+            </div> */}
+            <SocialLogin></SocialLogin>
   
             <div className='flex items-center justify-between mt-4'>
               <span className='w-1/5 border-b  lg:w-1/4'></span>

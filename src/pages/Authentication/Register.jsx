@@ -4,9 +4,13 @@ import { AuthContext } from '../../provider/AuthProvider';
 import toast from 'react-hot-toast';
 import logo from '../../assets/paw-pixie-high-resolution-logo-black-transparent.png'
 import { set } from 'date-fns';
+import useAxiosPublic from '../../Hooks/useAxiosPublic';
+import SocialLogin from './SocialLogin';
+import Swal from 'sweetalert2';
 
 const Register = () => {
-    const navigate = useNavigate()
+  const axiosPublic = useAxiosPublic();
+    const navigate = useNavigate();
     const {user,
         setUser,
         createUser,
@@ -14,16 +18,22 @@ const Register = () => {
         updateUserProfile} = useContext(AuthContext)
 
         // google sign in 
-const handelgoogleSignIn  = async() =>{
-    try {
-        await signInWithGoogle()
-        toast.success('Sign Up Successfully Complete')
-        navigate('/')
-    } catch(err){
-       console.log(err)
-       toast.error(err?.message)
-    }
-}
+// const handelgoogleSignIn  = async() =>{
+//     try {
+//         await signInWithGoogle()
+//         Swal.fire({
+//           icon: "success",
+//           title: "Sign Up Successfully Complete",
+//           showConfirmButton: false,
+//           timer: 1500
+//         });
+//         // toast.success('Sign Up Successfully Complete')
+//         navigate('/')
+//     } catch(err){
+//        console.log(err)
+//        toast.error(err?.message)
+//     }
+// }
 
 const handelSignUp = async e =>{
     e.preventDefault()
@@ -32,14 +42,35 @@ const handelSignUp = async e =>{
     const name = form.name.value
     const photo = form.photo.value
     const password = form.password.value
-    console.log({email,password,name,photo})
+   console.log({email,password,name,photo})
     try{
         const result = await createUser(email,password)
-        console.log(result)
+        // ---------------
+               // -------------------------------
+        const userInfo =  {
+          name: name,
+          email: email
+        }
+        //  user entry in database
+        axiosPublic.post('/users' , userInfo)
+        .then(res => {
+          if(res.data.insertedID){
+            console.log('user add hoise' ,userInfo);
+            toast.success('sign Up Complete')
+          }
+        })
+  toast.success('sign Up Complete')    //test
+  navigate('/')      
+        // --------------------------------
+        // ------------
+        // console.log(result)
         await updateUserProfile(name,photo)
+        console.log(name,photo,email);
         setUser({...user,photoURL: photo, displayName:name})
-        navigate('/')
-        toast.success('sign Up Complete')
+        
+       
+      
+       
     }catch(err){
         console.log(err)
         toast.error(err?.message)
@@ -65,7 +96,7 @@ const handelSignUp = async e =>{
               Get Your Free Account Now.
             </p>
   
-            <div onClick={handelgoogleSignIn} className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 '>
+            {/* <div onClick={handelgoogleSignIn} className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 '>
               <div className='px-4 py-2'>
                 <svg className='w-6 h-6' viewBox='0 0 40 40'>
                   <path
@@ -90,7 +121,8 @@ const handelSignUp = async e =>{
               <span className='w-5/6 px-4 py-3 font-bold text-center'>
                 Sign in with Google
               </span>
-            </div>
+            </div> */}
+            <SocialLogin></SocialLogin>
   
             <div className='flex items-center justify-between mt-4'>
               <span className='w-1/5 border-b  lg:w-1/4'></span>

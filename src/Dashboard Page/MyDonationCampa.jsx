@@ -12,18 +12,50 @@ const MyDonationCampa = () => {
   const [donators, setDonators] = useState([]);
   const [selectedCampaign, setSelectedCampaign] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const userEmail = user.email;
+  console.log(userEmail);
+  // -------------------------------------
+
+ 
+  // -------------------------------------
 
   useEffect(() => {
     const fetchCampaigns = async () => {
       try {
-        const res = await axiosPublic.get(`/campaigns?email=${user.email}`);
-        setCampaigns(res.data);
+        const res = await axiosPublic.get('/campaigns');
+        console.log(res);   //all data get
+        // ---------------------------------
+        const newRes = res.data.filter(res => res.email === userEmail)
+        console.log(newRes); // users data get
+        // ---------------------------------
+          // setCampaigns(res.data);
+           setCampaigns(newRes);
       } catch (error) {
         console.error("Error fetching campaigns:", error);
       }
     };
     fetchCampaigns();
-  }, [axiosPublic, user.email]);
+  }, []);
+  // ------------------------------------------------------------
+
+  // useEffect(() => {
+  //   const fetchCampaigns = async () => {
+  //     try {
+  //       const res = await axiosPublic.get(`/campaigns?email=${userEmail}`);
+  //       console.log(res);   //all data get
+  //       // ---------------------------------
+  //       const newRes = res.data.filter(res => res.email === userEmail)
+  //       console.log(newRes); // users data get
+  //       // ---------------------------------
+  //       setCampaigns(res.data);
+  //       // setCampaigns(newRes.data);
+  //     } catch (error) {
+  //       console.error("Error fetching campaigns:", error);
+  //     }
+  //   };
+  //   fetchCampaigns();
+  // }, [axiosPublic, userEmail]);
+  // ------------------------------------------------------------
 
   const handlePause = async (campaignId) => {
     try {

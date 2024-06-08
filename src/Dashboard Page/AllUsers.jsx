@@ -1,4 +1,4 @@
-import { useQueries, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { GrUserAdmin } from "react-icons/gr";
@@ -7,9 +7,9 @@ import { HiUserGroup } from "react-icons/hi";
 import { useState } from "react";
 
 const AllUsers = () => {
- 
   const axiosSecure = useAxiosSecure();
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const usersPerPage = 8;
 
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
@@ -59,7 +59,14 @@ const AllUsers = () => {
       }
     });
   };
- 
+
+  // Pagination logic
+  const indexOfLastUser = currentPage * usersPerPage;
+  const indexOfFirstUser = indexOfLastUser - usersPerPage;
+  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+  const totalPages = Math.ceil(users.length / usersPerPage);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div className="bg-[#1e272e] min-h-screen">
@@ -69,10 +76,8 @@ const AllUsers = () => {
           Total Users : {users.length}{" "}
         </h1>
       </div>
-      {/* ------------------------------- */}
       <div className="overflow-x-auto px-5 py-5">
         <table className="table ">
-          {/* head */}
           <thead>
             <tr>
               <th className="text-black text-xl bg-green-200">Index</th>
@@ -83,9 +88,9 @@ const AllUsers = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user, index) => (
+            {currentUsers.map((user, index) => (
               <tr key={user._id}>
-                <th className="text-white text-xl">{index + 1}</th>
+                <th className="text-white text-xl">{indexOfFirstUser + index + 1}</th>
                 <td className="text-white text-xl">{user.name}</td>
                 <td className="text-white text-xl">{user.email}</td>
                 <td className="text-white text-xl">
@@ -108,19 +113,40 @@ const AllUsers = () => {
                   )}
                 </td>
 
-                <td className="text-white  text-xl">
+                <td className="text-white text-xl">
                   <button
                     className="bg-blue-200 p-3 rounded-full hover:bg-blue-400"
                     onClick={() => handelDeleteUser(user)}
                   >
-                    {" "}
-                    <RiDeleteBinLine className="text-red-500 text-3xl" />{" "}
+                    <RiDeleteBinLine className="text-red-500 text-3xl" />
                   </button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+        {users.length > usersPerPage && (
+          <div className="flex justify-center mt-4">
+            <nav>
+              <ul className="flex list-none">
+                {[...Array(totalPages)].map((_, index) => (
+                  <li key={index} className="mx-1">
+                    <button
+                      onClick={() => paginate(index + 1)}
+                      className={`px-4 py-2 rounded-full ${
+                        currentPage === index + 1
+                          ? "bg-blue-500 text-white"
+                          : "bg-gray-200 text-black"
+                      }`}
+                    >
+                      {index + 1}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        )}
       </div>
     </div>
   );

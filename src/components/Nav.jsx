@@ -53,14 +53,14 @@ console.log(theme);
               Pet Listing
             </Link>
           </li>
-          <li className="hidden lg:block">
+          {/* <li className="hidden lg:block">
             <Link
               to="/"
               className="text-lg ml-5 font-samu bg-gray-600 text-white"
             >
               Donation
             </Link>
-          </li>
+          </li> */}
           <li className="hidden lg:block">
             <Link
               to="/campaigns"
@@ -69,14 +69,14 @@ console.log(theme);
               Campaigns
             </Link>
           </li>
-          <li className="hidden lg:block">
+          {/* <li className="hidden lg:block">
             <Link
               to="/"
               className="text-lg ml-5 font-samu bg-gray-600 text-white"
             >
               My Campaigns
             </Link>
-          </li>
+          </li> */}
           {/* ------------------------------- */}
           <label className="swap ml-5 swap-rotate">
   

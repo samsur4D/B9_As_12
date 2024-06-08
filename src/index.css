@@ -146,13 +146,13 @@
     
   } 
   .catsbanner{
-    background-image: url('https://i.ibb.co/6NcXNV3/cat-mapper-max-ogden-Ecs-Ce-S6ha-J8-unsplash.webp');
+    background-image: url('https://i.ibb.co/YtNsgr3/cat-mapper-max-ogden-Ecs-Ce-S6ha-J8-unsplash-1.webp');
     /* background-image: url('https://i.ibb.co/q1YWsRM/istockphoto-2149523968-612x612.jpg'); */
     height: 850px;
     
   } 
   .dogsbanner{
-    background-image: url('https://i.ibb.co/N77yK6q/sam-mcnamara-l-Bd-Vj-Qcf-SRQ-unsplash.webp');
+    background-image: url('https://i.ibb.co/0jn5k5P/sam-mcnamara-l-Bd-Vj-Qcf-SRQ-unsplash-1.webp');
     /* background-image: url('https://i.ibb.co/tLmkWvz/group-adorable-puppies-on-white-260nw-1982821883.jpg'); */
     height: 850px;
     
@@ -187,7 +187,8 @@
   } 
   .dash{
     /* background-image: url('https://i.ibb.co/9tLm8Cj/zhang-kaiyv-ECf-Pmk-OVZPA-unsplash.jpg');   */
-    background-image: url('https://i.ibb.co/cDCgw0b/marin-tulard-Qd-D8-Nw-Vjl-GU-unsplash.jpg');  
+    background-image: url('https://i.ibb.co/cDCgw0b/marin-tulard-Qd-D8-Nw-Vjl-GU-unsplash.jpg'); 
+    opacity: 500px; 
     background-position: center;
     background-size: cover;
     display: flex;

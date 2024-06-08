@@ -19,6 +19,12 @@ import MyDonations from '../Dashboard Page/MyDonations'
 import DashUpdate from "../Dashboard Page/DashUpdate";
 import Error from "../pages/Error";
 import Contact from "../pages/Contact";
+import Adp from "../pages/Adp";
+import AllUsers from "../Dashboard Page/AllUsers";
+import AllPets from "../Dashboard Page/AllPets";
+import AllDonations from "../Dashboard Page/AllDonations";
+import AdminRoute from "../components/AdminRoute";
+import About from "../pages/About";
 
 
   const router = createBrowserRouter([
@@ -36,6 +42,10 @@ import Contact from "../pages/Contact";
            element: <Contact></Contact>
         },
         {
+           path: '/about',
+           element: <About></About>
+        },
+        {
           path: '/petlisting',
           element: <PetListing></PetListing>
         },
@@ -46,6 +56,10 @@ import Contact from "../pages/Contact";
         {
           path: '/cats',
           element: <Cats></Cats>
+        },
+        {
+          path: '/adoptionprocess',
+          element: <Adp></Adp>
         },
         {
           path: '/dogs',
@@ -97,6 +111,18 @@ import Contact from "../pages/Contact";
         {
           path: 'update/:id',
           element: <DashUpdate></DashUpdate>,
+        },
+        {
+          path: 'allusers',
+          element: <AdminRoute> <AllUsers></AllUsers> </AdminRoute>,
+        },
+        {
+          path: 'allpets',
+          element: <AdminRoute> <AllPets></AllPets> </AdminRoute>,
+        },
+        {
+          path: 'alldonations',
+          element: <AdminRoute> <AllDonations></AllDonations> </AdminRoute>,
         }
        
       ]
