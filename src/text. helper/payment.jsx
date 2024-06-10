@@ -1,35 +1,34 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import useCampaigns from "../Hooks/useCampaigns";
-import Swal from "sweetalert2";
-import { AuthContext } from "../provider/AuthProvider";
 
-// TO Do ==>
+
+// TO Do ==> 
 const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GATEWAY_PK);
 
 const DonationDetails = () => {
   const { id } = useParams();
-  const [singleData, setSingleData] = useState([]);
-  const [donationId, setDonationId] = useState(null);
-  const [donationamt, setDonationamt] = useState(null);
+  const [details, setDetails] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [donationAmount, setDonationAmount] = useState("");
-  console.log( " in donation amount ",donationAmount);
+  
+
+  const singleData = details.find((detail) => detail._id === id);
+//   setDonationId(id)
+//   console.log(donationId);
+//   console.log(singleData);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     fetch("https://server-twelve.vercel.app/campaigns")
       .then((res) => res.json())
       .then((data) => {
-        const singleData = data.find((detail) => detail._id === id);
-        setDonationId(id);
-        setSingleData(singleData);
-        setDonationamt(singleData?.donatedAmount);
+        setDetails(data);
       });
-  }, [id]);
+  }, []);
 
   const handleDonateClick = () => {
     setIsModalOpen(true);
@@ -50,7 +49,7 @@ const DonationDetails = () => {
               alt=""
             />
           </div>
-          <div className="kala px-3">
+          <div className="kala  px-3">
             <h1 className="text-9xl font-bold ">{singleData.campaignsName}</h1>
             <p className="text-4xl font-semibold mt-10">
               {singleData.shortDescription}
@@ -110,7 +109,6 @@ const DonationDetails = () => {
             onClose={handleCloseModal}
             donationAmount={donationAmount}
             setDonationAmount={setDonationAmount}
-            donationId={donationId}
           />
         </Elements>
       )}
@@ -118,41 +116,25 @@ const DonationDetails = () => {
   );
 };
 
-// ---------------------------------------------------------------------------------------------------
+const DonationModal = ({ onClose, donationAmount, setDonationAmount }) => {
+    const [error , setError] = useState('');
+    const axiosSecure = useAxiosSecure();
+    const [ campaigns ] = useCampaigns();
+    
+   
+    // ----------------------------
+    
+    // -----------------------------
 
-const DonationModal = ({ onClose, donationAmount, setDonationAmount, donationId }) => {
-  const [error, setError] = useState('');
-  const [clientSecret, setClientSecret] = useState('');
-  const [transactionId , setTransactionId] = useState('')
-  const axiosSecure = useAxiosSecure();
-  const { id } = useParams();
-  const [campaigns] = useCampaigns();
-  const { user } = useContext(AuthContext)
-  console.log(user.email);
-  console.log(user.displayName);
-
-
-
-  const singleData = campaigns.find((detail) => detail._id === donationId);
-  console.log(singleData);
-
-  const previousDonatedAmount = parseInt(singleData?.donatedAmount);
-  console.log(previousDonatedAmount);  
+    useEffect(()=>{
+         axiosSecure.post('/create-payment-intent' )
+        //  
+        
+    },[])
 
 
-  useEffect(() => {
-    if (donationAmount) {
-      axiosSecure.post('/create-payment-intent', { donation: donationAmount })
-        .then(res => {
-           
-            console.log('Client secret received:', res.data.clientSecret);
-          setClientSecret(res.data.clientSecret);
-        })
-        .catch(err => console.error(err));
-    }
-  }, [axiosSecure, donationAmount]);
 
-  // stripe hooks----------------------------
+    // stripe hooks----------------------------
   const stripe = useStripe();
   const elements = useElements();
 
@@ -160,13 +142,14 @@ const DonationModal = ({ onClose, donationAmount, setDonationAmount, donationId 
     event.preventDefault();
 
     if (!stripe || !elements) {
+      
       return;
     }
 
     const cardElement = elements.getElement(CardElement);
 
-    if (cardElement === null) {
-      return;
+    if(cardElement === null){
+        return
     }
 
     const { error, paymentMethod } = await stripe.createPaymentMethod({
@@ -178,59 +161,13 @@ const DonationModal = ({ onClose, donationAmount, setDonationAmount, donationId 
     });
 
     if (error) {
-      console.error("Payment error", error);
-      setError(error.message);
+      console.error( " payment error ",error);
+      setError(error.message)
     } else {
-      const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-          card: cardElement,
-          billing_details: {
-            email: user?.email || 'anonymous',
-            name: user?.displayName || 'anonymous',
-            
-            
-          },
-        },
-      });
-
-      if (confirmError) {
-        console.error("Confirm payment error", confirmError);
-        setError(confirmError.message);
-      } else {
-        // to do--->--------------------->>>>>>>>>
-      
-        Swal.fire({
-            title: "Good job!",
-            text: "Payment Successfully Complete 👍",
-            icon: "success"
-          });
-        console.log("Payment successful:", paymentIntent);
-        if(paymentIntent){
-            console.log('transioton id' , paymentIntent.id);
-            setTransactionId(paymentIntent.id)
-            // save the data base
-            const donation = {
-                email: user.email,
-                name: user.displayName,
-                transactionId: paymentIntent.id,
-                donationPrice: donationAmount,
-                date: new Date(),
-                campaignId: singleData._id,
-                campaignName: singleData.campaignsName,
-                addemail: singleData.email,
-                addName: singleData.userName,
-                addphoto: singleData.userPhoto,
-                needAmount: singleData.maxDonationAmount,
-                status: 'pending'  
-            }
-           const res = await axiosSecure.post('/donations' , donation);
-           console.log( 'payment save' ,res);
-        }
-        setError('');
-        // You can now update the donation amount in your backend
-        // and possibly update the UI to reflect the new donation amount
-        onClose();
-      }
+      console.log("PaymentMethod created:", paymentMethod);
+      setError('');
+      // Process the payment here
+      onClose();
     }
   };
 
@@ -264,13 +201,12 @@ const DonationModal = ({ onClose, donationAmount, setDonationAmount, donationId 
             <button
               type="submit"
               className="bg-green-500 text-white px-4 py-2 rounded-lg"
-              disabled={!stripe || !clientSecret}
+              disabled={!stripe}
             >
               Donate
             </button>
+            <p className="text-sm text-red-500">{error}</p>
           </div>
-          <p className="text-sm text-red-500">{error}</p>
-          { transactionId && <p className="text-green-400">Your Transition Id : {transactionId}</p>}
         </form>
       </div>
     </div>

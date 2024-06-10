@@ -28,22 +28,6 @@ const SocialLogin = () => {
 
 
 
-    // const handelgoogleSignIn  = async() =>{
-    //     try {
-    //         await signInWithGoogle()
-    //         Swal.fire({
-    //             icon: "success",
-    //             title: "Google sign in Successfully Complete",
-    //             showConfirmButton: false,
-    //             timer: 1500
-    //           });
-    //         // toast.success('Sign Up Successfully Complete')
-    //         navigate('/')
-    //     } catch(err){
-    //        console.log(err)
-    //        toast.error(err?.message)
-    //     }
-    // }
 
 
     return (

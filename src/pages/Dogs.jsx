@@ -5,7 +5,7 @@ const Dogs = () => {
   const [pets, setPets] = useState([]);
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetch("http://localhost:5000/pet")
+    fetch("https://server-twelve.vercel.app/pet")
       .then((res) => res.json())
       .then((data) => {
         const dogs = data.filter((pet) => pet.status === "Dog");

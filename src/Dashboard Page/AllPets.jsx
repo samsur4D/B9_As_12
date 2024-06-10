@@ -34,7 +34,7 @@ const AllPets = () => {
     confirmButtonText: "Yes, delete it!"
   }).then((result) => {
     if (result.isConfirmed) {
-      fetch(`http://localhost:5000/pet/${id}`, {
+      fetch(`https://server-twelve.vercel.app/pet/${id}`, {
         method: "DELETE"
       })
         .then(res => res.json())

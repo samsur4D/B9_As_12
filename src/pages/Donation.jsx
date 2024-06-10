@@ -1,23 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import Viedo121 from '../Design/Viedo121';
+import { NavLink } from 'react-router-dom';
+import Slider from "../components/Slider";
+import SlideNew from '../Design/SlideNew';
+import Banneri from '../Design/Banneri'
 
 
 const Donation = () => {
+
     const [campaigns , setCampaigns] = useState([]);
 
     useEffect(()=>{
 		window.scrollTo(0, 0);
-        fetch('http://localhost:5000/campaigns')
+        fetch('https://server-twelve.vercel.app/campaigns')
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
+           
             setCampaigns(data)
         });
     }, []);
     
     return (
 		<>
-		<Viedo121></Viedo121>
+		{/* <Viedo121></Viedo121> */}
+		<Banneri></Banneri>
+		
         <div className='grid grid-cols-1 lg:grid-cols-3 px-24 py-16 mb-24  gap-5'>
            {
             campaigns.map(item => (
@@ -55,7 +62,9 @@ const Donation = () => {
 			</button>
 		</div>
 		<div>
+			<NavLink to={`/donadetails/${item._id}`}>
 			<button className='p-4 bg-blue-500 rounded-md text-white font-bold'>View details</button>
+			</NavLink>
 		</div>
 		<div className="flex space-x-2 text-sm dark:text-gray-600">
 			<button type="button" className="flex items-center p-1 space-x-1.5">

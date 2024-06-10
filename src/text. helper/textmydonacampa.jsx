@@ -14,29 +14,36 @@ const MyDonationCampa = () => {
   const [showModal, setShowModal] = useState(false);
   const userEmail = user.email;
   console.log(userEmail);
+  // -------------------------------------
 
-  const fetchCampaigns = async () => {
-    try {
-      const res = await axiosPublic.get('/campaigns');
-      console.log(res); // all data get
-      const newRes = res.data.filter(res => res.email === userEmail)
-      console.log(newRes); // users data get
-      setCampaigns(newRes);
-    } catch (error) {
-      console.error("Error fetching campaigns:", error);
-    }
-  };
-  
+ 
+  // -------------------------------------
+
   useEffect(() => {
-    
+    const fetchCampaigns = async () => {
+      try {
+        const res = await axiosPublic.get('/campaigns');
+        console.log(res);   //all data get
+        // ---------------------------------
+        const newRes = res.data.filter(res => res.email === userEmail)
+        console.log(newRes); // users data get
+        // ---------------------------------
+          // setCampaigns(res.data);
+           setCampaigns(newRes);
+      } catch (error) {
+        console.error("Error fetching campaigns:", error);
+      }
+    };
     fetchCampaigns();
-  }, [axiosPublic, userEmail]);
-  
+  }, []);
+  // ------------------------------------------------------------
+
+
+  // ------------------------------------------------------------
 
   const handlePause = async (campaignId) => {
     try {
       await axiosPublic.patch(`/campaigns/pause/${campaignId}`);
-      fetchCampaigns()
       Swal.fire("Paused!", "The campaign has been paused.", "success");
     } catch (error) {
       console.error("Error pausing campaign:", error);
@@ -49,11 +56,12 @@ const MyDonationCampa = () => {
     window.location.href = `/edit-campaign/${campaignId}`;
   };
 
-  const handleViewDonators = async (campaign) => {
+  const handleViewDonators = async (campaignId) => {
     try {
-      const res = await axiosPublic.get(`/donations?campaignId=${campaign._id}`);
+      const res = await axiosPublic.get(`/donations?campaignId=${campaignId}`);
+      // const res = await axiosPublic.get('/donations');
       setDonators(res.data);
-      setSelectedCampaign(campaign);
+      setSelectedCampaign(campaignId);
       setShowModal(true);
     } catch (error) {
       console.error("Error fetching donators:", error);
@@ -100,40 +108,26 @@ const MyDonationCampa = () => {
                   </div>
                 </td>
                 <td className="px-4 py-2 flex space-x-2">
-                  {
-                    campaign?.status === 'paused' ?
-                     <button
-                    onClick={() => handlePause(campaign._id)}
-                    className="bg-orange-500 text-white py-1 px-2 rounded"
-                  >
-                   Open
-                  </button>  :
-
-                   <button
-                    onClick={() => handlePause(campaign._id)}
-                    className="bg-red-900 text-white py-1 px-2 rounded"
-                  >
-                    Pause
-                  </button> 
-                  }
-                  {/* <button
+                  <button
                     onClick={() => handlePause(campaign._id)}
                     className="bg-red-500 text-white py-1 px-2 rounded"
                   >
                     Pause
-                  </button> */}
+                  </button>
                   <button
                     onClick={() => handleEdit(campaign._id)}
                     className="bg-yellow-500 text-white py-1 px-2 rounded"
                   >
                     Edit
                   </button>
-                  <button
-                    onClick={() => handleViewDonators(campaign)}
+                <NavLink>
+                <button
+                    onClick={() => handleViewDonators(campaign._id)}
                     className="bg-green-500 text-white py-1 px-2 rounded"
                   >
                     View Donators
                   </button>
+                </NavLink>
                 </td>
               </tr>
             ))}
@@ -144,7 +138,6 @@ const MyDonationCampa = () => {
       {showModal && (
         <ModalView
           donators={donators}
-          campaign={selectedCampaign}
           closeModal={closeModal}
         />
       )}

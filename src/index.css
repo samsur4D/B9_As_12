@@ -8,7 +8,7 @@
 
 /* *{
   border: 1px solid red
-} */
+}  */
 
 .card-body{
     visibility: hidden;
@@ -128,6 +128,22 @@
   .finaly1-hw{
     background-image: url('https://i.ibb.co/7C6m86B/yan-laurichesse-3q-Zn-N-M45-Ds-unsplash.jpg');
     height: 600px;
+    
+  } 
+  .kala{
+    background-image: url('https://i.ibb.co/k93GyLj/Adobe-Stock-110405220-Preview.jpg');
+    height: 1200px;
+    background-position: center;
+    
+   
+    background-size: cover;
+    border-radius: 30px;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    object-fit: cover;
     
   } 
   .finaly2-hw{

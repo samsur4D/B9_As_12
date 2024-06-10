@@ -25,6 +25,9 @@ import AllPets from "../Dashboard Page/AllPets";
 import AllDonations from "../Dashboard Page/AllDonations";
 import AdminRoute from "../components/AdminRoute";
 import About from "../pages/About";
+import MySentReq from "../Dashboard Page/MySentReq";
+import DonaDEtails from "../pages/DonaDEtails";
+import ModalView from "../components/ModalView";
 
 
   const router = createBrowserRouter([
@@ -70,6 +73,10 @@ import About from "../pages/About";
           element: <PrivateRoutes>  <Details></Details> </PrivateRoutes>
          },
         {
+          path: "/donadetails/:id",
+          element: <PrivateRoutes>  <DonaDEtails></DonaDEtails> </PrivateRoutes>
+         },
+        {
             path: '/login',
             element: <Login></Login>
         },
@@ -101,8 +108,16 @@ import About from "../pages/About";
           element:  <MyDonations></MyDonations>
         },
         {
+          path: 'donators',
+          element:  <ModalView></ModalView>
+        },
+        {
           path: 'adoptionreq',
           element: <AdoptionReq></AdoptionReq>
+        },
+        {
+          path: 'mysentrequest',
+          element: <MySentReq></MySentReq>
         },
         {
           path: 'createcampaign',

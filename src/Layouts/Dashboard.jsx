@@ -90,6 +90,16 @@ const Dashboard = () => {
               <li>
                 <NavLink
                   className="text-2xl text-gray-300 mt-2"
+                  to="/dashboard/mysentrequest"
+                >
+                  {" "}
+                  <DiGitPullRequest className="text-2xl text-[#9980FA] mt-2" />{" "}
+                  My Sent Request
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="text-2xl text-gray-300 mt-2"
                   to="/dashboard/createcampaign"
                 >
                   {" "}
@@ -148,6 +158,16 @@ const Dashboard = () => {
                   {" "}
                   <DiGitPullRequest className="text-2xl text-[#9980FA] mt-2" />{" "}
                   Adoption Request
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="text-2xl text-gray-300 mt-2"
+                  to="/dashboard/mysentrequest"
+                >
+                  {" "}
+                  <DiGitPullRequest className="text-2xl text-[#9980FA] mt-2" />{" "}
+                  My Sent Request
                 </NavLink>
               </li>
               <li>

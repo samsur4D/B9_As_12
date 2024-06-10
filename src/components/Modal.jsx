@@ -7,7 +7,7 @@ import useCart from "../Hooks/useCart";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Modal = ({ isOpen, onClose, singleData }) => {
-  const { name, image, age, breed, date, _id, addemail, adddate, adopted } =
+  const { name, image, age, breed, date, _id, addemail, adddate, adopted , addname , addphoto } =
     singleData || {};
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -59,6 +59,8 @@ const Modal = ({ isOpen, onClose, singleData }) => {
         email: user.email,
         username: user.displayName,
         userphoto: user.photoURL,
+        addname,
+        addphoto,
         addemail,
         adddate,
         adopted,

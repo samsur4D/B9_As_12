@@ -1,23 +1,51 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import useAxiosPublic from '../Hooks/useAxiosPublic';
+import { useQuery } from '@tanstack/react-query';
+import { AuthContext } from '../provider/AuthProvider';
 
-const ModalView = ({ donators, closeModal }) => {
+const ModalView = ({ donators, campaign, closeModal }) => {
+  const { user } = useContext(AuthContext);
+  const axiosPublic = useAxiosPublic();
+  const [newRes, setNewres] = useState([]);
+  const userEmail = user.email;
+  console.log(userEmail);
+
+  useEffect(() => {
+    const fetchDonations = async () => {
+      const res = await axiosPublic.get("/donations");
+      const newRes = res.data.filter(item => item.campaignId === campaign._id);
+      setNewres(newRes);
+    };
+
+    fetchDonations();
+  }, [axiosPublic, campaign._id]);
+
   return (
     <div className="fixed z-50 inset-0 overflow-y-auto">
       <div className="flex items-center justify-center min-h-screen">
         <div className="fixed inset-0 transition-opacity">
           <div className="absolute inset-0 bg-gray-900 opacity-75"></div>
         </div>
-        <div className="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
-          <div className="bg-gray-800 p-4">
-            <h2 className="text-2xl text-white">Donators</h2>
+        <div className="bg-black rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
+          <div className="bg-black p-4">
+            <h2 className="text-2xl text-white">Campaign Details</h2>
           </div>
-          <div className="bg-gray-100 p-4">
-            {donators.length > 0 ? (
+          <div className="bg-gray-600 p-4">
+            <h3 className="text-lg text-white mb-2"></h3>
+            <p className="text-white">Campaign Name: {campaign.campaignsName}</p>
+            <p className="text-white">Max Donation Amount: ${campaign.maxDonationAmount}</p>
+            <p className="text-white">Donated Amount: ${campaign.donatedAmount}</p>
+          </div>
+          <div className="bg-gray-600 p-4">
+            <h1 className='text-xl font-bold'>Donators Information</h1>
+            {newRes.length > 0 ? (
               <ul>
-                {donators.map((donator) => (
-                  <li key={donator._id} className="py-2 border-b border-gray-300">
-                    {donator.name}: ${donator.amount}
-                  </li>
+                {newRes.map((donator) => (
+                  <div className='flex justify-between' key={donator._id}>
+                    <li className="py-2 border-b border-black">{donator.name}</li>
+                    <li className="py-2 border-b border-black">{donator.email}</li>
+                    <li className="py-2 border-b border-black">Taka: {donator.donationPrice}</li>
+                  </div>
                 ))}
               </ul>
             ) : (

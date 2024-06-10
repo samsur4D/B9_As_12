@@ -7,6 +7,7 @@ import lolo from '../assets/1_QCAzLV78jkqOXwDH3-4JJA.webp'
 import lolo1 from '../assets/1_s2zc6qexL-F7G-TSYWBrbg.webp'
 import lolo4 from '../assets/1579118541-dog-adoption-process.png'
 import { NavLink } from 'react-router-dom';
+import Viedo121 from '../Design/Viedo121';
 
 const Adp = () => {
     return (
@@ -30,6 +31,7 @@ const Adp = () => {
             <img src={lolo1} alt="" />
           
         </div>
+        <Viedo121></Viedo121>
         <div className='flex items-center justify-center mt-5 mb-10'>
      <NavLink to='/petListing'>   <button className='bg-blue-500 font-bold text-white px-5 py-3 rounded-lg'>seacrh your loving pet and adopt</button></NavLink>
         {/* <button className='bg-blue-500 font-bold text-white px-5 py-3 ml-5 rounded-lg'>Back to Home</button> */}

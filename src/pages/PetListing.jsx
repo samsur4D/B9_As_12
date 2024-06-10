@@ -11,12 +11,12 @@ const PetListing = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetch("http://localhost:5000/pet")
+    fetch("https://server-twelve.vercel.app/pet") 
       .then((res) => res.json())
       .then((data) => setPets(data));
   }, []);
 
-  console.log(pets);
+  // console.log(pets);
   const filteredPets = pets.filter((pet) => {
     return (
       pet.breed.toLowerCase().includes(searchTerm.toLowerCase()) &&

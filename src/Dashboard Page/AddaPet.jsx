@@ -24,6 +24,8 @@ const AddAPet = () => {
       data.date = isoDate.substring(0, 10); 
       data.adopted = false;
       data.addEmail = user.email;
+      data.addphoto = user.photoURL;
+      data.addname = user.displayName;
 
       const res = await axios.post(image_hosting_api, formData, {
         headers: {
@@ -50,6 +52,8 @@ const AddAPet = () => {
                 longDescription: data.longDescription,
                 adopted: data.adopted,
                 addemail: data.addEmail,
+                addphoto: data.addphoto,
+                addname: data.addname,
                 adddate: data.date,
                 image: res.data.data.display_url
 

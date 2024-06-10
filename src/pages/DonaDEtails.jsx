@@ -7,7 +7,7 @@ import useCampaigns from "../Hooks/useCampaigns";
 import Swal from "sweetalert2";
 import { AuthContext } from "../provider/AuthProvider";
 
-// TO Do ==>
+// TO DO ==>
 const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GATEWAY_PK);
 
 const DonationDetails = () => {
@@ -17,7 +17,7 @@ const DonationDetails = () => {
   const [donationamt, setDonationamt] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [donationAmount, setDonationAmount] = useState("");
-  console.log( " in donation amount ",donationAmount);
+  console.log("in donation amount", donationAmount);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -42,7 +42,7 @@ const DonationDetails = () => {
   return (
     <>
       {singleData && (
-        <div className="flex">
+        <div className="flex ">
           <div>
             <img
               className="w-[3200px] h-[1200px]"
@@ -92,12 +92,22 @@ const DonationDetails = () => {
                 </div>
               </div>
               <div className="mr-20">
-                <button
+                {
+                  singleData?.status==='paused'  ? <> 
+                     <button
+                  className="bg-red-500 px-16 text-white font-bold py-5 text-7xl rounded-md"
+                  
+                >
+                  This Campaign Is Over
+                </button>
+                   </>  : <> <button
                   className="bg-orange-500 px-16 text-white font-bold py-5 text-7xl rounded-md"
                   onClick={handleDonateClick}
                 >
                   Donate Please
-                </button>
+                </button></>
+                }
+                
               </div>
             </div>
           </div>
@@ -111,6 +121,7 @@ const DonationDetails = () => {
             donationAmount={donationAmount}
             setDonationAmount={setDonationAmount}
             donationId={donationId}
+            previousDonatedAmount={donationamt}
           />
         </Elements>
       )}
@@ -120,32 +131,28 @@ const DonationDetails = () => {
 
 // ---------------------------------------------------------------------------------------------------
 
-const DonationModal = ({ onClose, donationAmount, setDonationAmount, donationId }) => {
+const DonationModal = ({ onClose, donationAmount, setDonationAmount, donationId, previousDonatedAmount }) => {
   const [error, setError] = useState('');
   const [clientSecret, setClientSecret] = useState('');
-  const [transactionId , setTransactionId] = useState('')
+  const [transactionId, setTransactionId] = useState('');
   const axiosSecure = useAxiosSecure();
   const { id } = useParams();
   const [campaigns] = useCampaigns();
-  const { user } = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   console.log(user.email);
   console.log(user.displayName);
-
-
 
   const singleData = campaigns.find((detail) => detail._id === donationId);
   console.log(singleData);
 
-  const previousDonatedAmount = parseInt(singleData?.donatedAmount);
-  console.log(previousDonatedAmount);  
-
+  const previousDonatedAmounti = parseInt(singleData?.donatedAmount);
+  console.log(previousDonatedAmounti);  
 
   useEffect(() => {
     if (donationAmount) {
       axiosSecure.post('/create-payment-intent', { donation: donationAmount })
         .then(res => {
-           
-            console.log('Client secret received:', res.data.clientSecret);
+          console.log('Client secret received:', res.data.clientSecret);
           setClientSecret(res.data.clientSecret);
         })
         .catch(err => console.error(err));
@@ -187,8 +194,6 @@ const DonationModal = ({ onClose, donationAmount, setDonationAmount, donationId 
           billing_details: {
             email: user?.email || 'anonymous',
             name: user?.displayName || 'anonymous',
-            
-            
           },
         },
       });
@@ -197,38 +202,47 @@ const DonationModal = ({ onClose, donationAmount, setDonationAmount, donationId 
         console.error("Confirm payment error", confirmError);
         setError(confirmError.message);
       } else {
-        // to do--->--------------------->>>>>>>>>
-      
         Swal.fire({
-            title: "Good job!",
-            text: "Payment Successfully Complete 👍",
-            icon: "success"
-          });
+          title: "Good job!",
+          text: "Payment Successfully Complete 👍",
+          icon: "success"
+        });
         console.log("Payment successful:", paymentIntent);
-        if(paymentIntent){
-            console.log('transioton id' , paymentIntent.id);
-            setTransactionId(paymentIntent.id)
-            // save the data base
-            const donation = {
-                email: user.email,
-                name: user.displayName,
-                transactionId: paymentIntent.id,
-                donationPrice: donationAmount,
-                date: new Date(),
-                campaignId: singleData._id,
-                campaignName: singleData.campaignsName,
-                addemail: singleData.email,
-                addName: singleData.userName,
-                addphoto: singleData.userPhoto,
-                needAmount: singleData.maxDonationAmount,
-                status: 'pending'  
-            }
-           const res = await axiosSecure.post('/donations' , donation);
-           console.log( 'payment save' ,res);
+        if (paymentIntent) {
+          console.log('transaction id', paymentIntent.id);
+          setTransactionId(paymentIntent.id);
+
+          // Calculate new donated amount
+          const newDonatedAmount = previousDonatedAmounti + parseInt(donationAmount);
+          console.log('new donated amount', newDonatedAmount);
+
+          // Save the data to the database
+          const donation = {
+            email: user.email,
+            name: user.displayName,
+            transactionId: paymentIntent.id,
+            donationPrice: donationAmount,
+            date: new Date(),
+            campaignId: singleData._id,
+            campaignName: singleData.campaignsName,
+            addemail: singleData.email,
+            addName: singleData.userName,
+            addphoto: singleData.userPhoto,
+            needAmount: singleData.maxDonationAmount,
+            status: 'pending',
+            newDonatedAmount: newDonatedAmount
+          };
+
+          const res = await axiosSecure.post('/donations', donation);
+          console.log('payment save', res);
+
+          // Update the campaign with the new donated amount
+          const updateRes = await axiosSecure.put(`/campaigns/${singleData._id}`, {
+            donatedAmount: newDonatedAmount
+          });
+          console.log('campaign updated', updateRes);
         }
         setError('');
-        // You can now update the donation amount in your backend
-        // and possibly update the UI to reflect the new donation amount
         onClose();
       }
     }
@@ -270,7 +284,7 @@ const DonationModal = ({ onClose, donationAmount, setDonationAmount, donationId 
             </button>
           </div>
           <p className="text-sm text-red-500">{error}</p>
-          { transactionId && <p className="text-green-400">Your Transition Id : {transactionId}</p>}
+          {transactionId && <p className="text-green-400">Your Transaction Id: {transactionId}</p>}
         </form>
       </div>
     </div>

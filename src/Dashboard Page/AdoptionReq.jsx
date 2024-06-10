@@ -14,7 +14,7 @@ const AdoptionReq = () => {
   const userEmail = user.email;
   //    console.log(userEmail);
 
-  const { data: carts = [] , refetch} = useQuery({
+  const { data: carts=[] , refetch} = useQuery({
     queryKey: ["carts"],
     queryFn: async () => {
       const res = await axiosPublic.get("/carts");
@@ -25,8 +25,63 @@ const AdoptionReq = () => {
       return newRes;
       
     },
-   
+//    initialData: []
   });
+//   ----------------------------------------------- true koraR JNNO
+const toggleAdoptionStatus = ( id, id2 ) => {
+    fetch(`https://server-twelve.vercel.app/carts/accept/${id}`, {
+      method: 'PUT',
+    })
+    .then(res => res.json())
+    .then(() => {
+        refetch()
+      setRequest(prevPets =>
+        prevPets.map(pet =>
+          pet._id === id ? { ...pet, adopted: !pet.adopted } : pet
+        )
+      );
+    //   --------------------------------------------------
+    });
+    fetch(`https://server-twelve.vercel.app/pet/adoptw/${id2}`, {
+      method: 'PUT',
+    })
+    .then(res => res.json())
+    .then(() => {
+         refetch()
+      setRequest(prevPets =>
+        prevPets.map(pet =>
+          pet._id === id ? { ...pet, adopted: !pet.adopted } : pet
+        )
+      );
+    });
+  };
+//   ------------------------------------------------
+const toggleAdoptionStatusi = (id , id2 ) => {
+    fetch(`https://server-twelve.vercel.app/carts/accepto/${id}`, {
+      method: 'PUT',
+    })
+    .then(res => res.json())
+    .then(() => {
+     refetch()
+      setRequest(prevPets =>
+        prevPets.map(pet =>
+          pet._id === id ? { ...pet, adopted: !pet.adopted  } : pet
+        )
+      );
+    });
+    fetch(`https://server-twelve.vercel.app/pet/adopty/${id2}`, {
+        method: 'PUT',
+      })
+      .then(res => res.json())
+      .then(() => {
+      refetch()
+        setRequest(prevPets =>
+          prevPets.map(pet =>
+            pet._id === id ? { ...pet, adopted: !pet.adopted } : pet
+          )
+        );
+      });
+  };
 //   -----------------------------------------------
 const handleDelete = id => {
    
@@ -134,8 +189,14 @@ const handleDelete = id => {
           <h1 className="text-white">{item.address}</h1>
         </th>
         <td className="flex gap-3">
-        <button  className="btn btn-outline btn-success">Accept</button>
-        <button  onClick={() => handleDelete(item._id)} className="btn btn-outline btn-warning">Reject</button>
+       {
+        item.adopted ?
+        <button    onClick={() => toggleAdoptionStatusi(item._id , item.adoptId)}  className="btn btn-secondary">-Request Accepted-</button>
+      :
+     <> <button    onClick={() => toggleAdoptionStatus(item._id , item.adoptId)}  className="btn btn-outline btn-success">Accept</button> 
+
+     <button  onClick={() => handleDelete(item._id)} className="btn btn-outline btn-warning">Reject</button></>
+       }
         </td>
      
       </tr> )

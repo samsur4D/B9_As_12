@@ -22,30 +22,11 @@ const Viedo121 = () => {
   };
 
   return (
-  <div className=" lg:mt-52 lg:mb-40 ">
-    {/* <Marquee speed={200}><h1 className="text-3xl py-3 font-samu px-5"> __Enjoy Our Celebration Viedo  .....And Give US Your Review ---💛</h1></Marquee> */}
+  <div className=" lg:mt-52 lg:mb-40  ">
+   
       <div className="flex items-center justify-center h-[600px]">
-      {/* {!isPlaying && (
-        <div className="campa bg-red">
-          <section className="mt-32 ">
-            <div className="container mx-auto flex flex-col items-center px-4 py-16 text-center  ">
-              <h1 className="text-md text-gray-600 text-opacity-50 font-samu font-semibold leading-none">
-                CELEBRATING A MILESTONE
-              </h1>
-              <p className="px-8 text-gray-600 mt-8 mb-12 text-5xl font-samu font-bold">
-                10 Million Pets Adopted
-              </p>
-              <div className="flex-col text-gray-600 flex-wrap justify-center">
-                <button className="px-8 py-3 m-2 text-xl font-bold rounded font-samu text-opacity-80 text-gray-600">
-                  Our Campaigns
-                </button>
-                <BiSolidDownArrowSquare className="ml-20 text-9xl animate-bounce" />
-              </div>
-            </div>
-          </section>
-        </div>
-      )} */}
-      <div className="video-container w-full h-full">
+     
+      <div className="video-container w-full aspect-video">
         <div>
          
         </div>
