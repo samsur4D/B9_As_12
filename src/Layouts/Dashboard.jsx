@@ -119,12 +119,12 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink
-                  className="text-2xl text-gray-300 mt-2"
+                  className="text-2xl  text-gray-300 mt-2"
                   to="/dashboard/mydonations"
                 >
                   {" "}
                   <FaRegMoneyBill1 className="text-2xl text-[#58B19F] mt-2" /> My
-                  Donation
+                  Donatione
                 </NavLink>
               </li>
             </>
