@@ -30,7 +30,7 @@ const About = () => {
             <h1 className="text-5xl lg:text-9xl">Let's</h1>
             <h1 className="text-5xl lg:text-9xl">Work</h1>
             <h1 className="text-5xl lg:text-9xl">Together</h1>
-            <p className="text-3xl lg:text-4xl mt-32">
+            <p className="text-xl lg:text-4xl mt-32">
               Since 1994 we have supported nonprofits and governmenmt entities
               with over $500 millon in grants fund
             </p>
@@ -56,7 +56,7 @@ const About = () => {
         </div>
         <img className="w-[800px] " src={bedi} alt="" />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3  items-center justify-center bg-blue-200 px-5 py-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 mt-20 lg:mt-0  items-center justify-center bg-blue-200 px-5 py-10">
         <img className="ml-0 lg:ml-36" src={one} alt="" />
         <img className="ml-0 lg:ml-36" src={two} alt="" />
         <img className="ml-0 lg:ml-36" src={three} alt="" />

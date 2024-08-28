@@ -13,7 +13,7 @@ const MyDonations = () => {
     fetch("https://server-twelve.vercel.app/donations")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log(data);    
         const newData = data.filter((item) => item.email === user.email);
         console.log(newData);
         setDonations(newData);

@@ -14,7 +14,7 @@ const Dashboard = () => {
   const [isAdmin] = useAdmin();
 
   return (
-    <div className="flex">
+    <div className="flex flex-col lg:flex-row">
       {/* sidebar */}
       <div className="dash w-96 min-h-screen bg-black bg-opacity-50">
         <ul className="menu p-4">

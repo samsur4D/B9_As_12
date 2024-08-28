@@ -19,7 +19,7 @@ const Dogs = () => {
         <div className="hero-overlay bg-black  bg-opacity-30"></div>
         <div className="hero-content text-center bg-black opacity-60 px-10 py-10 rounded-2xl text-neutral-content">
           <div className="max-w-3xl">
-            <h1 className="mb-5 text-9xl w-full font-samu font-bold">Dogs</h1>
+            <h1 className="mb-5 text-4xl lg:text-9xl w-full font-samu font-bold">Dogs</h1>
             <p className="mb-5">
               "Dogs have a way of finding the people who need them and filling
               an emptiness we didn't ever know we had." – Thom Jones
@@ -41,7 +41,7 @@ const Dogs = () => {
                 alt="Album"
               />
             </figure>
-            <div className="w-[550px] px-3 bg-[#dfe6e9] py-16">
+            <div className="lg:w-[550px] px-3 bg-[#dfe6e9] py-16">
               <h2 className="card-title text-md font-bold font-samu">
                 Name : {pet.name}
               </h2>

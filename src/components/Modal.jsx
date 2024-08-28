@@ -105,19 +105,19 @@ const Modal = ({ isOpen, onClose, singleData }) => {
   return (
     <div className="fixed inset-0 bg-gray-600 bg-opacity-30 flex justify-center items-center">
       <div className="bg-white p-6 rounded shadow-md max-w-4xl max-h-min w-full">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-5xl underline mb-3 font-bold">
+        <div className="flex justify-between items-center mb-4 ">
+          <h2 className="text-2xl mt-3 lg:text-5xl underline lg:mb-3 font-bold">
             Adopt {singleData.name}
           </h2>
           <button onClick={onClose} className="text-xl">
             &times;
           </button>
         </div>
-        <div className="flex items-center  gap-16">
+        <div className="lg:flex items-center  gap-16">
           {/* -------------- */}
-          <div className="flex items-center mb-5 gap-16">
+          <div className="lg:flex items-center mb-5 gap-16">
             <img className="w-28 rounded-2xl" src={singleData.image} alt="" />
-            <div className="bg-black bg-opacity-20 px-5 py-4 rounded-2xl">
+            <div className="bg-black bg-opacity-20 px-5 mt-5 lg:mt-0 py-4 rounded-2xl">
               <h1 className="text-md font-semibold">
                 Pet Id : {singleData._id}
               </h1>
@@ -137,7 +137,7 @@ const Modal = ({ isOpen, onClose, singleData }) => {
           </div>
           {/* -------------- */}
         {
-            singleData.adopted ?   <div className="animate-bounce">
+            singleData.adopted ?   <div className="animate-bounce mb-3 lg:mb-0">
             <h2 className="text-red-600  text-xl">
               You Can't Adopt This Pet Beacuse <br />{" "}
               <span className="bg-black font-bold px-4 py-1 rounded-md ">This Pet Is Already Adopted</span>
@@ -147,7 +147,7 @@ const Modal = ({ isOpen, onClose, singleData }) => {
         </div>
         <form>
           <div className="flex gap-5">
-            <div className="mb-4 w-full">
+            <div className="lg:mb-4 w-full">
               <label className="block text-sm font-medium mb-2" htmlFor="name">
                 Your Name
               </label>
@@ -160,7 +160,7 @@ const Modal = ({ isOpen, onClose, singleData }) => {
                 required
               />
             </div>
-            <div className="mb-4 w-full">
+            <div className="lg:mb-4 w-full">
               <label className="block text-sm font-medium mb-2" htmlFor="email">
                 Your Email
               </label>
@@ -175,7 +175,7 @@ const Modal = ({ isOpen, onClose, singleData }) => {
             </div>
           </div>
           <div className="flex gap-5">
-            <div className="mb-4 w-full">
+            <div className="lg:mb-4 w-full">
               <label className="block text-sm font-medium mb-2" htmlFor="phone">
                 Your Phone No.
               </label>
@@ -207,7 +207,7 @@ const Modal = ({ isOpen, onClose, singleData }) => {
               />
             </div>
           </div>
-          <div className="mb-4">
+          <div className="lg:mb-4 hidden lg:block">
             <label className="block text-sm font-medium mb-2" htmlFor="message">
               Message
             </label>

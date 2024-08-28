@@ -26,14 +26,14 @@ const Adp = () => {
 
             {/* --------------------------------------------- */}
         </div>
-        <div className='flex items-center justify-center'>
+        <div className='lg:flex items-center justify-center'>
             <img src={lolo} alt="" />
             <img src={lolo1} alt="" />
           
         </div>
         <Viedo121></Viedo121>
         <div className='flex items-center justify-center mt-5 mb-10'>
-     <NavLink to='/petListing'>   <button className='bg-blue-500 font-bold text-white px-5 py-3 rounded-lg'>seacrh your loving pet and adopt</button></NavLink>
+     <NavLink to='/petListing'>   <button className='bg-blue-500 font-bold text-white px-5 py-3 mt-5 lg:mt-0 rounded-lg'>seacrh your loving pet and adopt</button></NavLink>
         {/* <button className='bg-blue-500 font-bold text-white px-5 py-3 ml-5 rounded-lg'>Back to Home</button> */}
         </div>
         <div className='flex items-center justify-center mt-5 mb-10'>

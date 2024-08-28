@@ -110,7 +110,7 @@ const Action = () => {
             <div className="flex flex-col justify-between p-6 space-y-8">
               <div className="space-y-2">
                 <h2 className="text-3xl text-gray-300 font-semibold tracking-wide">
-                  Donec lectus leo
+                Maiza Found Her Home
                 </h2>
                 <p className="text-gray-300">
                   Adopt a pet. Grow your family. Fill your home with love. With
@@ -140,7 +140,7 @@ const Action = () => {
             <div className="flex flex-col justify-between p-6 space-y-8">
               <div className="space-y-2">
                 <h2 className="text-3xl text-gray-300 font-semibold tracking-wide">
-                  Donec lectus leo
+                 kiki Playing with her MoM
                 </h2>
                 <p className="text-gray-300">
                   When a family adopts a pet, everything changes for the better.
@@ -165,7 +165,7 @@ const Action = () => {
             <div className="flex flex-col justify-between p-6 space-y-8">
               <div className="space-y-2">
                 <h2 className="text-3xl text-gray-300 font-semibold tracking-wide">
-                  Donec lectus leo
+                 Happy Family With Loving pets
                 </h2>
                 <p className="text-gray-300">
                   Not ready or able to commit to adopting a dog, cat, or other
@@ -197,7 +197,7 @@ const Action = () => {
             We partner with shelters across Bangladesh to help more than 400,000
             pets find homes each year .
           </h3>
-          <Link className="flex items-center mt-10 text-white justify-center">
+          <Link to='/petlisting' className="flex items-center mt-10 text-white justify-center">
             {" "}
             <button className="bg-orange-600 flex items-center justify-center px-5 py-3 rounded-lg font-samu font-semibold">
               Our Adoption Process

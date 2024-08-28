@@ -26,13 +26,13 @@ const Details = () => {
             {singleData && (
                 <section className='grid grid-cols-1 lg:grid-cols-2   items-center justify-center'>
                     <div className="">
-                        <div className="container bg-[#aaa69d] flex flex-col items-center px-5 py-16 pb-24 mx-auto text-center lg:pb-72 md:py-32 md:px-10 lg:px-32">
-                            <h1 className="text-5xl font-bold leading-none font-samu sm:text-6xl  ">{singleData.name}</h1>
+                        <div className="container bg-[#aaa69d] flex flex-col items-center  py-16 pb-24 mx-auto text-center lg:pb-72 md:py-32 md:px-10 lg:px-32">
+                            <h1 className="text-3xl lg:text-5xl font-bold leading-none font-samu sm:text-6xl  ">{singleData.name}</h1>
                             <div className='flex gap-10 mt-5 '>
-                                <h1 className="text-5xl font-bold  leading-none sm:text-6xl  lg:text-2xl  ">Breed: {singleData.breed} </h1>
-                                <h1 className="text-5xl font-bold leading-none sm:text-6xl   lg:text-2xl">Location: {singleData.location} </h1>
+                                <h1 className="text-2xl font-bold  leading-none  lg:text-2xl  ">Breed: {singleData.breed} </h1>
+                                <h1 className="text-2xl font-bold leading-none    lg:text-2xl">Location: {singleData.location} </h1>
                             </div>
-                            <p className="mt-10 mb-3 text-3xl font-semibold sm:mb-12  ">{singleData.details}</p>
+                            <p className="mt-10 mb-3 lg:text-3xl font-semibold sm:mb-12  ">{singleData.details}</p>
                             <p className="mt-3 mb-3 text-3xl font-semibold sm:mb-12  ">{singleData.longDescription
 }</p>
                           
@@ -52,7 +52,7 @@ const Details = () => {
                             </div>
                         </div>
                     </div>
-                    <img src={singleData.image} alt="" className="w-full h-[950px] mx-auto    shadow-md " />
+                    <img src={singleData.image} alt="" className="lg:w-full lg:h-[950px] mx-auto    shadow-md " />
                 </section>
             )}
             <Modal isOpen={isModalOpen} onClose={closeModal} singleData={singleData} /> {/* Include Modal */}

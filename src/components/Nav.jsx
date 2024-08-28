@@ -141,13 +141,13 @@ console.log(theme);
                 <Link to="/">Home</Link>
               </li>
               <li className="block lg:hidden">
-                <Link to="/">Pet Listing</Link>
+                <Link  to="/petlisting">Pet Listing</Link>
               </li>
               <li className="block lg:hidden">
                 <Link to="/">Donation</Link>
               </li>
               <li className="block lg:hidden">
-                <Link to="/">Campaigns</Link>
+                <Link   to="/campaigns">Campaigns</Link>
               </li>
 
               <li className="font-samu block text-center">

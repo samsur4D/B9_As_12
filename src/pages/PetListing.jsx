@@ -86,7 +86,7 @@ const PetListing = () => {
                 alt="Album"
               />
             </figure>
-            <div className="w-[550px] h-[420px] flex flex-col  border border-[#2c2c54] px-3 bg-[#dfe6e9] py-16">
+            <div className="lg:w-[550px] h-[420px] flex flex-col  border border-[#2c2c54] px-3 bg-[#dfe6e9] py-16">
             <div className="flex-1">
             <h2 className="card-title mb-1 text-sm font-bold font-samu">
                 Name: {pet.name}

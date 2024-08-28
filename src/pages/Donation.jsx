@@ -25,10 +25,10 @@ const Donation = () => {
 		{/* <Viedo121></Viedo121> */}
 		<Banneri></Banneri>
 		
-        <div className='grid grid-cols-1 lg:grid-cols-3 px-24 py-16 mb-24  gap-5'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 px-6 lg:px-24 py-16 mb-24  gap-5'>
            {
             campaigns.map(item => (
-                <div key={item._id} className="flex border hover:bg-gray-300 hover:scale-[1.09] bg-white transition-all flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-x">
+                <div key={item._id} className="flex  border hover:bg-gray-300 hover:scale-[1.09] bg-white transition-all flex-col  p-6 space-y-6 overflow-hidden rounded-lg shadow-x">
 	<div className="flex space-x-4">
 		<img alt="" src={item.userPhoto} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
 		<div className="flex flex-col space-y-1">
@@ -42,8 +42,8 @@ const Donation = () => {
 }</h2>
 		<h2 className="mb-1 text-xl font-semibold">{item.date}</h2>
 		<div className='flex justify-between'>
-        <h2 className="mb-1 text-xl font-semibold">Need:{item.maxDonationAmount}</h2>
-		<h2 className="mb-1 text-xl font-semibold">Currently Have:{item.donatedAmount}</h2>
+        <h2 className="mb-1 text-xl font-semibold">Need: ${item.maxDonationAmount}</h2>
+		<h2 className="mb-1 text-xl font-semibold">Currently Have: ${item.donatedAmount}</h2>
         </div>
         <h2 className="mb-1 text-orange-500 text-xl font-semibold">{item.campaignStatus}</h2>
 		<p className="text-sm dark:text-gray-600">{item.shortDescription}</p>

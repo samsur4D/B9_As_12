@@ -7,7 +7,7 @@ import slidefour from '../assets/slide4.webp'
 
 const SlideNew = () => {
     useEffect(() => {
-        // Scroll to top when component mounts
+        
         window.scrollTo(0, 0);
 
         fetch('https://server-twelve.vercel.app/pet')
@@ -20,12 +20,12 @@ const SlideNew = () => {
 
     return (
         <header>
-        <header className=" contain   relative rounded-md">
+        <header className=" contain hidden lg:block   relative rounded-md">
         <div className="carousel h-[650px] rounded-lg">
-            <div id="slide1" className="carousel-item relative w-full">
+            <div id="slide1" className="flex  carousel-item relative w-full">
               <img src={slideone} className="w-full rounded-lg object-cover" />
               <div className='bg-black'>
-             <h1 className='text-9xl font-bold text-white'>Love Heals</h1>
+             <h1 className='lg:text-9xl font-bold text-white'>Love Heals</h1>
              <p className='text-white mt-10'>Physical Health Benefits
 Improved Cardiovascular Health:
 

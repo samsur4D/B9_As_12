@@ -39,9 +39,9 @@ const Viedo121 = () => {
           <div className="bg-transparent rounded-xl">
             <button onClick={toggleVideo} className="play-button mt-80">
               {isPlaying ? (
-                <FaPauseCircle className="text-9xl text-black text-opacity-60" />
+                <FaPauseCircle className="text-7xl lg:text-9xl text-black text-opacity-60" />
               ) : (
-                <FaGooglePlay className="text-9xl text-black text-opacity-60" />
+                <FaGooglePlay className="text-7xl lg:text-9xl text-black text-opacity-60" />
               )}
             </button>
           </div>
