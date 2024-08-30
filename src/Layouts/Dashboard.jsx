@@ -124,7 +124,7 @@ const Dashboard = () => {
                 >
                   {" "}
                   <FaRegMoneyBill1 className="text-2xl text-[#58B19F] mt-2" /> My
-                  Donatione
+                  Donation
                 </NavLink>
               </li>
             </>

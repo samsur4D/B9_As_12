@@ -1,4 +1,5 @@
 # Pet Adoption Platform
+changed
 
 Welcome to our Pet Adoption Platform! This platform aims to connect pets in need with loving homes. Whether you're looking to adopt a furry friend or support pet welfare initiatives through donations, our platform provides a seamless experience for users and administrators alike.
 
